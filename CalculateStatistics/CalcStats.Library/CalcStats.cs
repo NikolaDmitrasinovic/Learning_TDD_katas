@@ -3,16 +3,16 @@ namespace CalcStats.Library
 {
     public class CalcStats
     {
-        private int[] value;
+        private int[] sequence;
 
-        public CalcStats(int[] value)
+        public CalcStats(int[] _sequence)
         {
-            this.value = value;
+            sequence = _sequence;
         }
 
         public object Minimum()
         {
-            return value.Min();
+            return sequence.Min();
         }
     }
 }
