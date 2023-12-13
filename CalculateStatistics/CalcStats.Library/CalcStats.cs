@@ -3,7 +3,7 @@ namespace CalcStats.Library
 {
     public class CalcStats
     {
-        private object value;
+        private int[] value;
 
         public CalcStats(int[] value)
         {
@@ -12,7 +12,7 @@ namespace CalcStats.Library
 
         public object Minimum()
         {
-            throw new NotImplementedException();
+            return value.Min();
         }
     }
 }
