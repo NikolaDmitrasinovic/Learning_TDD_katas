@@ -37,5 +37,16 @@ namespace TennisGameTests
             // Assert
             ScoreConverter.Convert(2).Should().Be("30");
         }
+
+        [Fact]
+        public void Should_Convert3_To40()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            ScoreConverter.Convert(3).Should().Be("40");
+        }
     }
 }
