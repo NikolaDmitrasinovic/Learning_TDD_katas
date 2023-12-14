@@ -4,6 +4,15 @@
     {
         public static string Calculate(int player1Score, int player2Score)
         {
+            if (player1Score == player2Score && player1Score >= 3)
+            {
+                return "deuce";
+            }
+            else if (Math.Abs(player1Score - player2Score) == 1 && player1Score >= 3 && player2Score >= 3)
+            {
+                return player1Score > player2Score ? "player1 AD" : "player2 AD";
+            }
+
             return GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
         }
 
