@@ -4,12 +4,7 @@
     {
         public static string GetReadableTime(int timeInSeconds)
         {
-            if (timeInSeconds > 0)
-            {
-                return ConvertToDoubleDigit(timeInSeconds / 3600) + ":" + ConvertToDoubleDigit(timeInSeconds % 3600 / 60) + ":" + ConvertToDoubleDigit(timeInSeconds % 60);
-            }
-
-            return "00:00:00";
+            return ConvertToDoubleDigit(timeInSeconds / 3600) + ":" + ConvertToDoubleDigit(timeInSeconds % 3600 / 60) + ":" + ConvertToDoubleDigit(timeInSeconds % 60);
         }
 
         private static string ConvertToDoubleDigit(int value)
