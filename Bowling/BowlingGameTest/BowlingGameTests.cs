@@ -70,6 +70,18 @@ namespace BowlingGameTest
             game.Score().Should().Be(24);
         }
 
+        [Fact]
+        public void Shoud_ResolvePerfectGame()
+        {
+            // Arrange
+
+            // Act
+            RollMany(12, 10);
+
+            // Assert
+            game.Score().Should().Be(300);
+        }
+
         private void RollStrike()
         {
             game.Roll(10);
