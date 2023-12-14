@@ -5,8 +5,11 @@ namespace TennisGameTests
 {
     public class GameTests
     {
-        [Fact]
-        public void Should_ScoreFirstPoint_ForPlayer1()
+        [Theory]
+        [InlineData(1, 0, "15-love")]
+        [InlineData(2, 2, "30-30")]
+        [InlineData(3, 2, "40-30")]
+        public void Should_ReturnScore_ForGame(int player1Score, int player2Score, string result)
         {
             // Arrange
             var player1 = new Player();
@@ -14,10 +17,11 @@ namespace TennisGameTests
             var game = new Game(player1, player2);
 
             // Act
-            PlayerScore(player1, 1);
+            PlayerScore(player1, player1Score);
+            PlayerScore(player2, player2Score);
 
             // Assert
-            game.CalculateScore().Should().Be("15-love");
+            game.CalculateScore().Should().Be(result);
         }
 
         [Fact]
