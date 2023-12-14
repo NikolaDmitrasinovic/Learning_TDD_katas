@@ -6,7 +6,7 @@
         {
             if (timeInSeconds > 0)
             {
-                return "00:" + ConvertToDoubleDigit(timeInSeconds / 60) + ":" + ConvertToDoubleDigit(timeInSeconds % 60);
+                return ConvertToDoubleDigit(timeInSeconds / 3600) + ":" + ConvertToDoubleDigit(timeInSeconds % 3600 / 60) + ":" + ConvertToDoubleDigit(timeInSeconds % 60);
             }
 
             return "00:00:00";
