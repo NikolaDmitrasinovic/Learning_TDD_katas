@@ -1,3 +1,5 @@
+BOWLING
+
 CALCULATE STATISTICS
 Process a sequence of integer numbers to determine the following statistics:
 
