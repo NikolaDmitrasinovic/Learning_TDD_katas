@@ -5,12 +5,12 @@ namespace BowlingGame
     {
         public void Roll(int v)
         {
-            throw new NotImplementedException();
+            
         }
 
         public object Score()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
