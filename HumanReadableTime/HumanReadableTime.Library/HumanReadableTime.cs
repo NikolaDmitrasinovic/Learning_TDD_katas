@@ -4,6 +4,10 @@
     {
         public static string GetReadableTime(int seconds)
         {
+            if (seconds > 59)
+            {
+                return "00:" + ConvertToDoubleDigit(seconds / 60) + ":" + ConvertToDoubleDigit(seconds % 60);
+            }
             if (seconds > 0)
             {                
                 return "00:00:" + ConvertToDoubleDigit(seconds);
