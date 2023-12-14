@@ -4,7 +4,7 @@
     {
         public static string GetReadableTime(int seconds)
         {
-            return "";
+            return "00:00:00";
         }
     }
 }
