@@ -24,7 +24,7 @@ namespace CalcStats.Library
 
         public object NumberOfElements()
         {
-            throw new NotImplementedException();
+            return sequence.Length;
         }
     }
 }
