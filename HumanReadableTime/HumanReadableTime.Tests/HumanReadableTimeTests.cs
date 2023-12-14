@@ -5,66 +5,20 @@ namespace HumanReadableTime.Tests
 {
     public class HumanReadableTimeTests
     {
-        [Fact]
-        public void Should_ReturnStartTime_For0Seconds()
+        [Theory]
+        [InlineData(0, "00:00:00")]
+        [InlineData(5, "00:00:05")]
+        [InlineData(60, "00:01:00")]
+        [InlineData(86_399, "23:59:59")]
+        [InlineData(359_999, "99:59:59")]
+        public void Should_ReturnReadableTime_ForInputInSeconds(int input, string result)
         {
             // Arrange
 
             // Act
-            var readableTime = GetReadableTime(0);
 
             // Assert
-            readableTime.Should().Be("00:00:00");
-        }
-
-        [Fact]
-        public void Should_ReturnCorrectTime_For5Seconds()
-        {
-            // Arrange
-
-            // Act
-            var readableTime = GetReadableTime(5);
-
-            // Assert
-            readableTime.Should().Be("00:00:05");
-        }
-
-        [Fact]
-        public void Should_ReturnMinutes_ForOver59SecondsInput()
-        {
-            // Arrange
-
-            // Act
-            var readableTime = GetReadableTime(60);
-
-            // Assert
-            readableTime.Should().Be("00:01:00");
-        }
-
-        [Fact]
-        public void Should_ReturnHours_ForOver3600SecondsInput()
-        {
-            // Arrange
-
-            // Act
-            var readableTime = GetReadableTime(86399);
-
-            // Assert
-            readableTime.Should().Be("23:59:59");
-        }
-
-        [Fact]
-        public void Should_ReturnMaxReadableTime()
-        {
-            // Arrange
-
-            // Act
-            var readableTime = GetReadableTime(359999);
-
-            // Assert
-            readableTime.Should().Be("99:59:59");
+            GetReadableTime(input).Should().Be(result);
         }
     }
 }
-
-//Assert.AreEqual(TimeFormat.GetReadableTime(359999),99:59:59);
