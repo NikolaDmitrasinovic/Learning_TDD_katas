@@ -36,6 +36,22 @@ namespace TennisGameTests
             game.CalculateScore().Should().Be("deuce");
         }
 
+        [Fact]
+        public void Should_ShowAdvantage_ForLeadingPlayer()
+        {
+            // Arrange
+            var player1 = new Player();
+            var player2 = new Player();
+            var game = new Game(player1, player2);
+
+            // Act
+            PlayerScore(player1, 4);
+            PlayerScore(player2, 3);
+
+            // Assert
+            game.CalculateScore().Should().Be("player1 AD");
+        }
+
         private static void PlayerScore(Player player, int score)
         {
             for (int i = 0; i < score; i++)
