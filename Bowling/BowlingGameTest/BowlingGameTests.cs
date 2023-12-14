@@ -61,13 +61,18 @@ namespace BowlingGameTest
             // Arrange
 
             // Act            
-            game.Roll(10);
+            RollStrike();
             game.Roll(3);
             game.Roll(4);
             RollMany(16, 0);
 
             // Assert
             game.Score().Should().Be(24);
+        }
+
+        private void RollStrike()
+        {
+            game.Roll(10);
         }
 
         private void RollSpare()
