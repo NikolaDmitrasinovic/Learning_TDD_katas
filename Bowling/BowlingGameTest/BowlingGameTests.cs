@@ -53,7 +53,7 @@ namespace BowlingGameTest
             RollMany(17, 0);
 
             // Assert
-            game.Score().Should().Be(20);
+            game.Score().Should().Be(16);
         }
     }
 }
