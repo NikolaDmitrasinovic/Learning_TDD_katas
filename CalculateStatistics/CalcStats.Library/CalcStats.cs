@@ -1,6 +1,7 @@
 ﻿
 
 
+
 namespace CalcStats.Library
 {
     public class CalcStats
@@ -10,6 +11,11 @@ namespace CalcStats.Library
         public CalcStats(int[] _sequence)
         {
             sequence = _sequence;
+        }
+
+        public object AverageValue()
+        {
+            throw new NotImplementedException();
         }
 
         public object Maximum()
