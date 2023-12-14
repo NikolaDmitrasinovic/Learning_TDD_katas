@@ -29,5 +29,18 @@ namespace CalcStats.Tests
             // Assert
             minimumValue.Should().Be(14);
         }
+
+        [Fact]
+        public void Should_ReturnNumberOfElements_InIntsArray()
+        {
+            // Arrange
+            var sequence = new Library.CalcStats([1, 2, 6, -4, 14, -1]);
+
+            // Act
+            var minimumValue = sequence.NumberOfElements();
+
+            // Assert
+            minimumValue.Should().Be(6);
+        }
     }
 }

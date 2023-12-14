@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace CalcStats.Library
 {
     public class CalcStats
@@ -19,6 +20,11 @@ namespace CalcStats.Library
         public object Minimum()
         {
             return sequence.Min();
+        }
+
+        public object NumberOfElements()
+        {
+            throw new NotImplementedException();
         }
     }
 }
