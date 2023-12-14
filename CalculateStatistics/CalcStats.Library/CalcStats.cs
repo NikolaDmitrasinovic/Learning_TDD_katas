@@ -1,4 +1,5 @@
 ﻿
+
 namespace CalcStats.Library
 {
     public class CalcStats
@@ -8,6 +9,11 @@ namespace CalcStats.Library
         public CalcStats(int[] _sequence)
         {
             sequence = _sequence;
+        }
+
+        public object Maximum()
+        {
+            return sequence.Max();
         }
 
         public object Minimum()
