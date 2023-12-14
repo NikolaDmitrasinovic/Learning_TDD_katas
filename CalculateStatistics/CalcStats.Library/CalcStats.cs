@@ -15,7 +15,7 @@ namespace CalcStats.Library
 
         public object AverageValue()
         {
-            throw new NotImplementedException();
+            return sequence.Average();
         }
 
         public object Maximum()
