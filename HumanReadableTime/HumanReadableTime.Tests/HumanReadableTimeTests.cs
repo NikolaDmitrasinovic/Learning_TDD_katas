@@ -28,9 +28,20 @@ namespace HumanReadableTime.Tests
             // Assert
             readableTime.Should().Be("00:00:05");
         }
+
+        [Fact]
+        public void Should_ReturnMinutes_ForOver59SecondsInput()
+        {
+            // Arrange
+
+            // Act
+            var readableTime = GetReadableTime(60);
+
+            // Assert
+            readableTime.Should().Be("00:01:00");
+        }
     }
 }
 
-//Assert.AreEqual(TimeFormat.GetReadableTime(60),00:01:00);
 //Assert.AreEqual(TimeFormat.GetReadableTime(86399),23:59:59);
 //Assert.AreEqual(TimeFormat.GetReadableTime(359999),99:59:59);
