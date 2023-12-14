@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CalculateStatistics", "CalculateStatistics", "{F10503FA-4834-4891-B0CF-226BBBAC1E43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcStats.Tests", "CalculateStatistics\CalcStats.Tests\CalcStats.Tests.csproj", "{87DB7515-334C-4B4B-A47B-C5F2EF61F26E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcStats.Tests", "CalculateStatistics\CalcStats.Tests\CalcStats.Tests.csproj", "{87DB7515-334C-4B4B-A47B-C5F2EF61F26E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcStats.Library", "CalculateStatistics\CalcStats.Library\CalcStats.Library.csproj", "{BAB956A6-E8D8-4461-BAE8-CDCFBF4BAC76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcStats.Library", "CalculateStatistics\CalcStats.Library\CalcStats.Library.csproj", "{BAB956A6-E8D8-4461-BAE8-CDCFBF4BAC76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HumanReadableTime", "HumanReadableTime", "{203F26F1-73A1-41F8-8DEF-7A14AB3F61B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
