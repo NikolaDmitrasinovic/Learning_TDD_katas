@@ -3,15 +3,11 @@ namespace TennisGame
 {
     public class Player
     {
-        public Player()
-        {
-        }
-
-        public object Score { get; set; }
+        public int Score { get; private set; }
 
         public void PlayerScores()
         {
-            throw new NotImplementedException();
+            Score++;
         }
     }
 }
