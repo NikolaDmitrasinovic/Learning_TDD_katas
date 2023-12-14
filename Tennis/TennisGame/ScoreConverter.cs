@@ -2,12 +2,10 @@
 {
     public class ScoreConverter
     {
-        public static string Convert(int v)
+        public static string Convert(int score)
         {
-            if (v != 0)
-            {
+            if (score != 0)
                 return "15";
-            }
 
             return "love";
         }
