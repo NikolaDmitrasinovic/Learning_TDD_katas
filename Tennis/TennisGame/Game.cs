@@ -14,6 +14,11 @@ namespace TennisGame
 
         public string CalculateScore()
         {
+            if (player1.Score == player2.Score && player1.Score >= 3)
+            {
+                return "deuce";
+            }
+
             return ScoreConverter.Convert(player1.Score) + "-" + ScoreConverter.Convert(player2.Score);
         }
     }
