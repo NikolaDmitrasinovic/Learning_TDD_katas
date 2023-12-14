@@ -4,16 +4,32 @@
     {
         public static string Calculate(int player1Score, int player2Score)
         {
-            if (player1Score == player2Score && player1Score >= 3)
+            string score;
+
+            if (IsDeuce(player1Score, player2Score))
             {
-                return "deuce";
+                score =  "deuce";
             }
-            else if (Math.Abs(player1Score - player2Score) == 1 && player1Score >= 3 && player2Score >= 3)
+            else if (IsAdvantage(player1Score, player2Score))
             {
-                return player1Score > player2Score ? "player1 AD" : "player2 AD";
+                score = player1Score > player2Score && player1Score >= 3 && player2Score >= 3 ? "player1 AD" : "player2 AD";
+            }
+            else
+            {
+                score = GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
             }
 
-            return GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
+            return score;
+        }
+
+        private static bool IsDeuce(int player1Score, int player2Score)
+        {
+            return player1Score == player2Score && player1Score >= 3 && player2Score >= 3;
+        }
+
+        private static bool IsAdvantage(int player1Score, int player2Score)
+        {
+            return Math.Abs(player1Score - player2Score) == 1;
         }
 
         private static string GetTennisScore(int score)
