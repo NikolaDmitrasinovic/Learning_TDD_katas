@@ -3,7 +3,7 @@ namespace BowlingGame
 {
     public class Game
     {
-        public void Roll(int v)
+        public void Roll(int pins)
         {
             
         }
