@@ -14,7 +14,7 @@ namespace TennisGameTests
             var game = new Game(player1, player2);
 
             // Act
-            player1.PlayerScores();
+            PlayerScore(player1, 1);
 
             // Assert
             game.CalculateScore().Should().Be("15-love");
@@ -29,16 +29,19 @@ namespace TennisGameTests
             var game = new Game(player1, player2);
 
             // Act
-            player1.PlayerScores();
-            player1.PlayerScores();
-            player1.PlayerScores();
-
-            player2.PlayerScores();
-            player2.PlayerScores();
-            player2.PlayerScores();
+            PlayerScore(player1, 3);
+            PlayerScore(player2, 3);
 
             // Assert
             game.CalculateScore().Should().Be("deuce");
+        }
+
+        private static void PlayerScore(Player player, int score)
+        {
+            for (int i = 0; i < score; i++)
+            {
+                player.PlayerScores();
+            }
         }
     }
 }
