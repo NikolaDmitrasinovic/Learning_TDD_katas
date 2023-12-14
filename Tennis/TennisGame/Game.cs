@@ -23,7 +23,7 @@ namespace TennisGame
                 return player1.Score > player2.Score ? "player1 AD" : "player2 AD";
             }
 
-            return ScoreConverter.Convert(player1.Score) + "-" + ScoreConverter.Convert(player2.Score);
+            return ScoreCalculator.Calculate(player1.Score, player2.Score);
         }
     }
 }

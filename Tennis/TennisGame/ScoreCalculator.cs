@@ -1,8 +1,8 @@
 ﻿namespace TennisGame
 {
-    public class ScoreConverter
+    public class ScoreCalculator
     {
-        public static string Convert(int player1Score, int player2Score)
+        public static string Calculate(int player1Score, int player2Score)
         {
             return GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
         }

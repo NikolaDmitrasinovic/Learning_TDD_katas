@@ -3,7 +3,7 @@ using TennisGame;
 
 namespace TennisGameTests
 {
-    public class ScoreConverterTests
+    public class ScoreCalculatorTests
     {
         [Theory]
         [InlineData(0, 0, "love-love")]
@@ -17,7 +17,7 @@ namespace TennisGameTests
             // Act
 
             // Assert
-            ScoreConverter.Convert(player1Score, player2Score).Should().Be(convertedScore);
+            ScoreCalculator.Calculate(player1Score, player2Score).Should().Be(convertedScore);
         }
     }
 }
