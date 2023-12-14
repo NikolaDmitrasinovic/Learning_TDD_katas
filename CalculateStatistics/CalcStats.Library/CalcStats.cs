@@ -1,36 +1,22 @@
-﻿
-
-
-
-namespace CalcStats.Library
+﻿namespace CalcStats.Library
 {
     public class CalcStats
     {
         private int[] sequence;
 
+        public int Minimum { get; }
+        public int Maximum { get; }
+        public int NumberOfElements { get; }
+        public double AverageValue { get; }
+
         public CalcStats(int[] _sequence)
         {
             sequence = _sequence;
-        }
 
-        public object AverageValue()
-        {
-            return sequence.Average();
-        }
-
-        public object Maximum()
-        {
-            return sequence.Max();
-        }
-
-        public object Minimum()
-        {
-            return sequence.Min();
-        }
-
-        public object NumberOfElements()
-        {
-            return sequence.Length;
+            Minimum = sequence.Min();
+            Maximum = sequence.Max();
+            NumberOfElements = sequence.Length;
+            AverageValue = sequence.Average();
         }
     }
 }
