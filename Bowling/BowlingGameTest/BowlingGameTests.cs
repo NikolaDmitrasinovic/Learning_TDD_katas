@@ -40,5 +40,20 @@ namespace BowlingGameTest
             // Assert
             game.Score().Should().Be(20);
         }
+
+        [Fact]
+        public void Shoud_ResolveScore_ForOneSpare()
+        {
+            // Arrange
+
+            // Act
+            game.Roll(5);
+            game.Roll(5);
+            game.Roll(3);
+            RollMany(17, 0);
+
+            // Assert
+            game.Score().Should().Be(20);
+        }
     }
 }
