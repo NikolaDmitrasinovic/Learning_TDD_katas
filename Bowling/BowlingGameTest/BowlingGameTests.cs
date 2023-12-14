@@ -55,6 +55,21 @@ namespace BowlingGameTest
             game.Score().Should().Be(16);
         }
 
+        [Fact]
+        public void Shoud_ResolveScore_ForOneStrike()
+        {
+            // Arrange
+
+            // Act            
+            game.Roll(10);
+            game.Roll(3);
+            game.Roll(4);
+            RollMany(16, 0);
+
+            // Assert
+            game.Score().Should().Be(24);
+        }
+
         private void RollSpare()
         {
             game.Roll(5);
