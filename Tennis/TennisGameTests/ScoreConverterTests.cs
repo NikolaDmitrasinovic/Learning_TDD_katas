@@ -15,5 +15,16 @@ namespace TennisGameTests
             // Assert
             ScoreConverter.Convert(0).Should().Be("love");
         }
+
+        [Fact]
+        public void Should_Convert1_To15()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            ScoreConverter.Convert(1).Should().Be("15");
+        }
     }
 }
