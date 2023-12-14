@@ -18,6 +18,10 @@ namespace TennisGame
             {
                 return "deuce";
             }
+            else if (Math.Abs(player1.Score - player2.Score) == 1 && player1.Score >= 3 && player2.Score >= 3)
+            {
+                return player1.Score > player2.Score ? "player1 AD" : "player2 AD";
+            }
 
             return ScoreConverter.Convert(player1.Score) + "-" + ScoreConverter.Convert(player2.Score);
         }
