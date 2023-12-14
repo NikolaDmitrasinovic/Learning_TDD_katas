@@ -52,6 +52,18 @@ namespace HumanReadableTime.Tests
             // Assert
             readableTime.Should().Be("23:59:59");
         }
+
+        [Fact]
+        public void Should_ReturnMaxReadableTime()
+        {
+            // Arrange
+
+            // Act
+            var readableTime = GetReadableTime(359999);
+
+            // Assert
+            readableTime.Should().Be("99:59:59");
+        }
     }
 }
 
