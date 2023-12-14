@@ -5,48 +5,19 @@ namespace TennisGameTests
 {
     public class ScoreConverterTests
     {
-        [Fact]
-        public void Should_Convert0_ToLove()
+        [Theory]
+        [InlineData(0, "love")]
+        [InlineData(1, "15")]
+        [InlineData(2, "30")]
+        [InlineData(3, "40")]
+        public void Should_ConvertIntScore_ToTennisScore(int score, string convertedScore)
         {
             // Arrange
 
             // Act
 
             // Assert
-            ScoreConverter.Convert(0).Should().Be("love");
-        }
-
-        [Fact]
-        public void Should_Convert1_To15()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            ScoreConverter.Convert(1).Should().Be("15");
-        }
-
-        [Fact]
-        public void Should_Convert2_To30()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            ScoreConverter.Convert(2).Should().Be("30");
-        }
-
-        [Fact]
-        public void Should_Convert3_To40()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            ScoreConverter.Convert(3).Should().Be("40");
+            ScoreConverter.Convert(score).Should().Be(convertedScore);
         }
     }
 }
