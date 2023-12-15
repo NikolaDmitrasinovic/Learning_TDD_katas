@@ -38,5 +38,16 @@
             // Assert
             ScoreCalculator.Calculate(4, 3).Should().Be("player1 AD");
         }
+
+        [Fact]
+        public void Should_ReturnWinner()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            ScoreCalculator.Calculate(0, 4).Should().Be("player2 WON");
+        }
     }
 }
