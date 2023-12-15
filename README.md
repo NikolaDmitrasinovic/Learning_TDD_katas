@@ -28,6 +28,16 @@ Process a sequence of integer numbers to determine the following statistics:
 * number of elements in the sequence
 * average value
 
+EVEN OR ODD
+Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
+Give your answer in string format as [odd] or [even]. If the input array is empty consider it as \[0] ( array with a zero ).
+
+Example:
+* OddOrEven(\[0]) returns "even"
+* OddOrEven(\[2, 5, 34, 6]) returns "odd"
+* OddOrEven(\[0, -1, -5]) returns "even"
+  
+
 HUMAN READABLE TIME
 
 Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
