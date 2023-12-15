@@ -39,15 +39,17 @@
             ScoreCalculator.Calculate(4, 3).Should().Be("player1 AD");
         }
 
-        [Fact]
-        public void Should_ReturnWinner()
+        [Theory]
+        [InlineData(0, 4, "player2 WON")]
+        [InlineData(4, 0, "player1 WON")]
+        public void Should_ReturnWinner(int player1Score, int player2Score, string result)
         {
             // Arrange
 
             // Act
 
             // Assert
-            ScoreCalculator.Calculate(0, 4).Should().Be("player2 WON");
+            ScoreCalculator.Calculate(player1Score, player2Score).Should().Be(result);
         }
     }
 }
