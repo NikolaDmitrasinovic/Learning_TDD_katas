@@ -38,9 +38,23 @@ The maximum time never exceeds 359_999 (99:59:59).
 
 Solution (TDD way):
 	Assert for:
-		- 0 ( minimal valid input, no need to test for negative values as it is handled naturally during the implementation process )
-		- 5
-		- 60 ( implementing minutes )
-		- 86_399
-		- 359_999 ( maximum valid value )
-		- any value greater than valid maximum 
+- 0 ( minimal valid input, no need to test for negative values as it is handled naturally during the implementation process )
+- 5
+- 60 ( implementing minutes )
+- 86_399
+- 359_999 ( maximum valid value )
+- any value greater than valid maximum 
+
+TENNIS
+
+Implement a simple tennis game.
+Game Rules:
+* A game is won by the first player to have won at least four points in total and at least two points more than the opponent
+* Points from 0 to 3 are described: "love", "15", "30", "40"
+* if at least three points have been scored by each player, and the scores are equal, the score is "deuce"
+* if at least three points have been scored by each player, and one side has one pint more than the opponent, that player has an "advantage"
+
+Match Rules:
+* There are [best of 3] and [best of 5] matches in terms of sets
+* To win a set player must win at least 6 games, and have at least two games lead against the opponent
+* If both player have 6 games won the [tie braker] is played 
