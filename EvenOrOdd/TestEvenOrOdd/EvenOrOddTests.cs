@@ -3,7 +3,7 @@ namespace TestEvenOrOdd
     public class EvenOrOddTests
     {
         [Fact]
-        public void Test1()
+        public void Should_ReturnEven_ForEmptyArray()
         {
             // Arrange
 
