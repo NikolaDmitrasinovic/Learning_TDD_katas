@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using TennisGame;
-
-namespace TennisGameTests
+﻿namespace TennisGameTests
 {
     public class ScoreCalculatorTests
     {
@@ -29,7 +26,7 @@ namespace TennisGameTests
 
             // Assert
             ScoreCalculator.Calculate(3, 3).Should().Be("deuce");
-        }        
+        }
 
         [Fact]
         public void Should_ShowAdvantage_ForLeadingPlayer()

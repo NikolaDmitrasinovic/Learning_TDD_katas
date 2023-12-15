@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using TennisGame;
-
-namespace TennisGameTests
+﻿namespace TennisGameTests
 {
     public class PlayerTests
     {
