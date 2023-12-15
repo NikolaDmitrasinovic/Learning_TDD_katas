@@ -4,6 +4,11 @@
     {
         public static string Calculate(int player1Score, int player2Score)
         {
+            if (player2Score >= 4 && player2Score - player1Score >= 2)
+            {
+                return "player2 WON";
+            }
+
             return PassDeuce(player1Score, player2Score) ? 
                 Deuce(player1Score, player2Score) + Advantage(player1Score, player2Score) :
                 GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
