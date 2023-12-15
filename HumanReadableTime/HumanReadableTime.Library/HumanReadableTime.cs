@@ -7,15 +7,7 @@
             if (timeInSeconds < 0 || timeInSeconds > 359_999)
                 return "00:00:00";
 
-            return ConvertToDoubleDigit(timeInSeconds / 3600) + ":" + ConvertToDoubleDigit(timeInSeconds % 3600 / 60) + ":" + ConvertToDoubleDigit(timeInSeconds % 60);
-        }
-
-        private static string ConvertToDoubleDigit(int value)
-        {
-            if (value < 10)
-                return "0" + value;
-
-            return "" + value;
+            return $"{timeInSeconds / 3600:00}:{timeInSeconds % 3600 / 60:00}:{timeInSeconds % 60:00}";
         }
     }
 }
