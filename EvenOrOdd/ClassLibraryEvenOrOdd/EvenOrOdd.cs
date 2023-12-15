@@ -5,6 +5,11 @@ namespace ClassLibraryEvenOrOdd
     {
         public static string OddOrEven(int[] intsArray)
         {
+            if (intsArray.Length != 0)
+            {
+                return "odd";
+            }
+
             return "even";
         }
     }
