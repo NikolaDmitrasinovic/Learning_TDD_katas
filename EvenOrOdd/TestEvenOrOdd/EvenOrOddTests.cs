@@ -28,7 +28,7 @@ namespace TestEvenOrOdd
 
         [Theory]
         [InlineData(new int[] { 4, 2, 3 }, "odd")]
-        //[InlineData(new int[] { 1, 3, 2 }, "even")]
+        [InlineData(new int[] { 1, 3, 2 }, "even")]
         public void Should_ReturnEvenOrOdd_ForSumOftArrayElements(int[] intsArray, string result)
         {
             // Arrange
