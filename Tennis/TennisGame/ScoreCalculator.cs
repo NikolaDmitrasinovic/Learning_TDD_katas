@@ -4,20 +4,17 @@
     {
         public static string Calculate(int player1Score, int player2Score)
         {
-            if (IsVictor(player1Score, player2Score))
-                return "player1 WON";
-
-            if (IsVictor(player2Score, player1Score))
-                return "player2 WON";
+            if (IsVictory(player1Score, player2Score))
+                return player1Score > player2Score ? "player1 WON" : "player2 WON";
 
             return PassDeuce(player1Score, player2Score) ? 
                 Deuce(player1Score, player2Score) + Advantage(player1Score, player2Score) :
                 GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
         }
 
-        private static bool IsVictor(int player1Score, int player2Score)
+        private static bool IsVictory(int player1Score, int player2Score)
         {
-            return player1Score >= 4 && player1Score - player2Score >= 2;
+            return Math.Abs(player1Score - player2Score) >= 2 && (player2Score >= 4 || player1Score >= 4);
         }
 
         private static bool PassDeuce(int player1Score, int player2Score)
