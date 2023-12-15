@@ -26,5 +26,16 @@ namespace TestLeapYear
             // Assert
             LeapYear.IsLeapYear(1996).Should().BeTrue();
         }
+
+        [Fact]
+        public void Should_ReturnFalse_ForUncommonYear()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            LeapYear.IsLeapYear(1900).Should().BeFalse();
+        }
     }
 }
