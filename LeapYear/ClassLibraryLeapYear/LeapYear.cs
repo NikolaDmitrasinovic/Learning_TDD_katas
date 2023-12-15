@@ -2,7 +2,7 @@
 {
     public class LeapYear
     {
-        public static bool IsLeapYear(int v)
+        public static bool IsLeapYear(int year)
         {
             return false;
         }
