@@ -19,8 +19,6 @@ namespace BowlingGameTest
         public void Shoud_SolveGutterGame()
         {
             // Arrange
-            var rolls = 20;
-            var pins = 0;
 
             // Act
             RollMany(20, 0);
