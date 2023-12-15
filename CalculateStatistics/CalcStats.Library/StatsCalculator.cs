@@ -1,6 +1,6 @@
 ﻿namespace CalcStats.Library
 {
-    public class CalcStats
+    public class StatsCalculator
     {
         private int[] sequence;
 
@@ -9,7 +9,7 @@
         public int NumberOfElements { get; }
         public double AverageValue { get; }
 
-        public CalcStats(int[] _sequence)
+        public StatsCalculator(int[] _sequence)
         {
             sequence = _sequence;
 

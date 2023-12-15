@@ -2,9 +2,9 @@ using FluentAssertions;
 
 namespace CalcStats.Tests
 {
-    public class CalcStatsTests
+    public class StatsCalculatorTests
     {
-        private readonly Library.CalcStats calcStats = new([1, 2, 6, -4, 14, -1]);
+        private readonly Library.StatsCalculator calcStats = new([1, 2, 6, -4, 14, -1]);
 
         [Fact]
         public void Should_ReturnMinimum_ForIntsArray()
