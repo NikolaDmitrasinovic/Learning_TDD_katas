@@ -8,14 +8,7 @@ namespace ClassLibraryEvenOrOdd
             if (intsArray.Length == 0)
                 return "even";
 
-            if (intsArray[0] % 2 == 0)
-            {
-                return "even";
-            }
-            else
-            {
-                return "odd";
-            }
+            return intsArray[0] % 2 == 0 ? "even" : "odd";
         }
     }
 }
