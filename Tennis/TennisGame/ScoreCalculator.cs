@@ -4,14 +4,20 @@
     {
         public static string Calculate(int player1Score, int player2Score)
         {
-            if (player2Score >= 4 && player2Score - player1Score >= 2)
-            {
+            if (IsVictor(player1Score, player2Score))
+                return "player1 WON";
+
+            if (IsVictor(player2Score, player1Score))
                 return "player2 WON";
-            }
 
             return PassDeuce(player1Score, player2Score) ? 
                 Deuce(player1Score, player2Score) + Advantage(player1Score, player2Score) :
                 GetTennisScore(player1Score) + "-" + GetTennisScore(player2Score);
+        }
+
+        private static bool IsVictor(int player1Score, int player2Score)
+        {
+            return player1Score >= 4 && player1Score - player2Score >= 2;
         }
 
         private static bool PassDeuce(int player1Score, int player2Score)
