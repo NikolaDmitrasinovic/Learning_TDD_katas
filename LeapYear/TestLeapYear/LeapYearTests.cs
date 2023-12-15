@@ -5,48 +5,19 @@ namespace TestLeapYear
 {
     public class LeapYearTests
     {
-        [Fact]
-        public void Should_ReturnFalse_ForCommonYear()
+        [Theory]
+        [InlineData(2001, false)]
+        [InlineData(1996, true)]
+        [InlineData(1900, false)]
+        [InlineData(2000, true)]
+        public void Should_ReturnFalse_ForCommonYear(int year, bool isLeapYear)
         {
             // Arrange
 
             // Act
 
             // Assert
-            LeapYear.IsLeapYear(2001).Should().BeFalse();
-        }
-
-        [Fact]
-        public void Should_ReturnTrue_ForCommonLeapYear()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            LeapYear.IsLeapYear(1996).Should().BeTrue();
-        }
-
-        [Fact]
-        public void Should_ReturnFalse_ForUncommonYear()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            LeapYear.IsLeapYear(1900).Should().BeFalse();
-        }
-
-        [Fact]
-        public void Should_ReturnTrue_ForUncommonLeapYear()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            LeapYear.IsLeapYear(2000).Should().BeTrue();
+            LeapYear.IsLeapYear(year).Should().Be(isLeapYear);
         }
     }
 }
