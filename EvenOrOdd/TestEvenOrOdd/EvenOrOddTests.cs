@@ -15,6 +15,7 @@ namespace TestEvenOrOdd
 
         [Theory]
         [InlineData(new int[] { 1 }, "odd")]
+        [InlineData(new int[] { 2 }, "even")]
         public void Should_ReturnEvenOrOdd_ForOneElementArray(int[] intsArray, string result)
         {
             // Arrange
