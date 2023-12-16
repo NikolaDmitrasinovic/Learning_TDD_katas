@@ -19,9 +19,9 @@ Solve by testing for:
 - one spare in a game
 - one strike in a game
 - perfect game ( all rolls are 10s ) - should auto-pass
-
+---------------------
 CALCULATE STATISTICS
-
+---------------------
 Process a sequence of integer numbers to determine the following statistics:
 * minimum value
 * maximum value
@@ -29,6 +29,7 @@ Process a sequence of integer numbers to determine the following statistics:
 * average value
 
 EVEN OR ODD
+
 Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
 Give your answer in string format as [odd] or [even]. If the input array is empty consider it as \[0] ( array with a zero ).
 
