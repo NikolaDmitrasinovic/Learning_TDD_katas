@@ -1,5 +1,6 @@
+--------
 BOWLING
-
+--------
 Write a class named “Game” that has two methods:
 - roll(pins : int) is called each time the player rolls a ball.  The argument is the number of pins knocked down.
 - score() : int is called only at the very end of the game.  It returns the total score for that game.
@@ -12,8 +13,7 @@ Game rules:
 - strike - when 10 pins are knocked on first try. Bonus: number of knocked pines in next 2 rolls
 - in 10th frame a spare or a strike earns extra balls, but no more than 3 balls can be rolled altogether
 
-Solution (TDD way):
-	Test for:
+Solve by testing for:
 - "Gutter Game" ( game with the result of 0 )
 - the game where all rolls are 1
 - one spare in a game
