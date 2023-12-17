@@ -25,5 +25,17 @@ namespace TestFizzBuzz
             // Assert
             gameResult.Should().BeEquivalentTo(["1", "2"]);
         }
+
+        [Fact]
+        public void Should_ReturnFizz_For3Multiplayer()
+        {
+            // Arrange
+
+            // Act
+            var gameResult = FizzBuzz.Play(3);
+
+            // Assert
+            gameResult.Should().BeEquivalentTo(["1", "2", "Fizz"]);
+        }
     }
 }
