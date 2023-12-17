@@ -3,7 +3,7 @@ namespace TestFizzBuzz
     public class FizzBuzzTests
     {
         [Fact]
-        public void Test1()
+        public void Should_Return1_For1Iteration()
         {
             // Arrange
 
