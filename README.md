@@ -1,5 +1,6 @@
+--------
 BOWLING
-
+--------
 Write a class named “Game” that has two methods:
 - roll(pins : int) is called each time the player rolls a ball.  The argument is the number of pins knocked down.
 - score() : int is called only at the very end of the game.  It returns the total score for that game.
@@ -12,41 +13,49 @@ Game rules:
 - strike - when 10 pins are knocked on first try. Bonus: number of knocked pines in next 2 rolls
 - in 10th frame a spare or a strike earns extra balls, but no more than 3 balls can be rolled altogether
 
-Solution (TDD way):
-	Test for:
+Solve by testing for:
 - "Gutter Game" ( game with the result of 0 )
 - the game where all rolls are 1
 - one spare in a game
 - one strike in a game
 - perfect game ( all rolls are 10s ) - should auto-pass
-
+---------------------
 CALCULATE STATISTICS
-
+---------------------
 Process a sequence of integer numbers to determine the following statistics:
 * minimum value
 * maximum value
 * number of elements in the sequence
 * average value
+------------
+EVEN OR ODD
+------------
+Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
+Give your answer in string format as [odd] or [even]. If the input array is empty consider it as \[0] ( array with a zero ).
 
+Example:
+* OddOrEven(\[0]) returns "even"
+* OddOrEven(\[2, 5, 34, 6]) returns "odd"
+* OddOrEven(\[0, -1, -5]) returns "even"
+--------------------
 HUMAN READABLE TIME
-
+--------------------
 Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 - HH = hours, padded to 2 digits, range: 00 – 99
 - MM = minutes, padded to 2 digits, range: 00 – 59
 - SS = seconds, padded to 2 digits, range: 00 – 59
 The maximum time never exceeds 359_999 (99:59:59).
 
-Solution (TDD way):
-	Assert for:
+Solve by testing for:
 - 0 ( minimal valid input, no need to test for negative values as it is handled naturally during the implementation process )
 - 5
 - 60 ( implementing minutes )
 - 86_399
 - 359_999 ( maximum valid value )
 - any value greater than valid maximum 
-
+-------
 TENNIS
-
+-------
 Implement a simple tennis game.
 Game Rules:
 * A game is won by the first player to have won at least four points in total and at least two points more than the opponent
