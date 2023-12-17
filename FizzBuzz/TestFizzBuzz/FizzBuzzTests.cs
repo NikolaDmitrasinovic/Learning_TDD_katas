@@ -20,7 +20,7 @@ namespace TestFizzBuzz
             // Arrange
 
             // Act
-            var gameResult = FizzBuzz.Play(1);
+            var gameResult = FizzBuzz.Play(2);
 
             // Assert
             gameResult.Should().BeEquivalentTo(["1", "2"]);
