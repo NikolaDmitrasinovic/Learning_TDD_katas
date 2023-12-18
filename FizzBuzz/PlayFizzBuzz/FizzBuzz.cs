@@ -9,7 +9,7 @@
 
             for (int i = 0; i < iterations; i++)
             {
-                if (number % 3 == 0)
+                if (Is3Multiplier(number))
                 {
                     fizzBuzz[i] = "Fizz";
                 }
@@ -23,6 +23,11 @@
             }
 
             return fizzBuzz;
+        }
+
+        private static bool Is3Multiplier(int number)
+        {
+            return number % 3 == 0;
         }
     }
 }
