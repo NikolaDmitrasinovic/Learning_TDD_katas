@@ -4,12 +4,25 @@
     {
         public static string[] Play(int iterations)
         {
-            if (iterations > 1)
+            string[] fizzBuzz = new string[iterations];
+            int number = 1;
+
+            for (int i = 0; i < iterations; i++)
             {
-                return ["1", "2"];
+                if (number % 3 == 0)
+                {
+                    fizzBuzz[i] = "Fizz";
+                }
+                else
+                {
+
+                    fizzBuzz[i] = number.ToString();
+                }
+
+                number++;
             }
 
-            return ["1"];
+            return fizzBuzz;
         }
     }
 }
