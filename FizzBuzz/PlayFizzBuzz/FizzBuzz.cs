@@ -13,7 +13,11 @@
                 {
                     fizzBuzz[i] = "Fizz";
                 }
-                else
+                if (number % 5 == 0)
+                {
+                    fizzBuzz[i] += "Buzz";
+                }
+                if (string.IsNullOrEmpty(fizzBuzz[i]))
                 {
 
                     fizzBuzz[i] = number.ToString();
