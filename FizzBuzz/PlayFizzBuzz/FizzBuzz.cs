@@ -11,16 +11,23 @@ namespace PlayFizzBuzz
 
             for (int i = 0; i < iterations; i++)
             {
-                StringBuilder resultBuilder = new();
+                string fizzOrBuzz = FizzOrBuzz(numbers[i]);
 
-                resultBuilder.Append(Is3Multiplier(numbers[i]) ? "Fizz" : "");
-                resultBuilder.Append(Is5Multiplier(numbers[i]) ? "Buzz" : "");
-
-                fizzBuzz[i] = resultBuilder.Length > 0 ? resultBuilder.ToString() : numbers[i].ToString();
+                fizzBuzz[i] = fizzOrBuzz.Length > 0 ? fizzOrBuzz.ToString() : numbers[i].ToString();
 
             }
 
             return fizzBuzz;
+        }
+
+        private static string FizzOrBuzz(int number)
+        {
+            StringBuilder resultBuilder = new();
+
+            resultBuilder.Append(Is3Multiplier(number) ? "Fizz" : "");
+            resultBuilder.Append(Is5Multiplier(number) ? "Buzz" : "");
+
+            return resultBuilder.ToString();
         }
 
         private static bool Is5Multiplier(int number)
