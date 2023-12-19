@@ -41,9 +41,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEvenOrOdd", "EvenOrOdd\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FizzBuzz", "FizzBuzz", "{5035818D-E725-4EE4-8193-871DDD7E866C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFizzBuzz", "FizzBuzz\PlayFizzBuzz\PlayFizzBuzz.csproj", "{46574320-44B9-4B73-89CE-20D1B53DDE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayFizzBuzz", "FizzBuzz\PlayFizzBuzz\PlayFizzBuzz.csproj", "{46574320-44B9-4B73-89CE-20D1B53DDE71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFizzBuzz", "FizzBuzz\TestFizzBuzz\TestFizzBuzz.csproj", "{66EDD7AC-8228-4858-A081-02605BC75AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestFizzBuzz", "FizzBuzz\TestFizzBuzz\TestFizzBuzz.csproj", "{66EDD7AC-8228-4858-A081-02605BC75AD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListComparator", "ListComparator", "{8CDFC3B8-320E-4F28-83AB-1CFBC7462C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestListComparator", "ListComparator\TestListComparator\TestListComparator.csproj", "{3A554160-12B1-4F68-8C99-288AE367F3DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryListComparator", "ListComparator\LibraryListComparator\LibraryListComparator.csproj", "{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +113,14 @@ Global
 		{66EDD7AC-8228-4858-A081-02605BC75AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66EDD7AC-8228-4858-A081-02605BC75AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66EDD7AC-8228-4858-A081-02605BC75AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A554160-12B1-4F68-8C99-288AE367F3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A554160-12B1-4F68-8C99-288AE367F3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A554160-12B1-4F68-8C99-288AE367F3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A554160-12B1-4F68-8C99-288AE367F3DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +140,8 @@ Global
 		{9EA00717-F43C-44A8-8AE7-570F86056935} = {DE3FC083-2923-4671-AA2E-C5AA9ECCA3E7}
 		{46574320-44B9-4B73-89CE-20D1B53DDE71} = {5035818D-E725-4EE4-8193-871DDD7E866C}
 		{66EDD7AC-8228-4858-A081-02605BC75AD8} = {5035818D-E725-4EE4-8193-871DDD7E866C}
+		{3A554160-12B1-4F68-8C99-288AE367F3DC} = {8CDFC3B8-320E-4F28-83AB-1CFBC7462C84}
+		{A6FB39C5-31FF-44CB-933D-4F8B4D25A9BE} = {8CDFC3B8-320E-4F28-83AB-1CFBC7462C84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D125AAD9-92BC-4DFF-91F1-3AAC78B58B06}
