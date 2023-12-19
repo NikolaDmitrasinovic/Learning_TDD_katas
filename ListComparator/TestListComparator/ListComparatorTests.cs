@@ -41,5 +41,19 @@ namespace TestListComparator
             // Assert
             numberOfSameElements.Should().Be(3);
         }
+
+        [Fact]
+        public void Should_Return0_For2DifferentArrays()
+        {
+            // Arrange
+            var subject = new[] { 1, 2, 3, 4, 5 };
+            var reference = new[] { 6, 7, 8, 9, 10 };
+
+            // Act
+            var numberOfSameElements = ListComparator.Compare(subject, reference);
+
+            // Assert
+            numberOfSameElements.Should().Be(0);
+        }
     }
 }
