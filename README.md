@@ -37,6 +37,14 @@ Example:
 * OddOrEven(\[0]) returns "even"
 * OddOrEven(\[2, 5, 34, 6]) returns "odd"
 * OddOrEven(\[0, -1, -5]) returns "even"
+---------
+FizzBuzz
+---------
+
+Write a program ( using TDD ) that prints the numbers from 1 to 100. But for multiples of three print "Fizz" and for multiples of five print "Buzz". For numbers which are multiples of both print "FizzBuzz".
+
+Sample output: 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 ... etc
+
 --------------------
 HUMAN READABLE TIME
 --------------------
