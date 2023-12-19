@@ -43,6 +43,7 @@ FizzBuzz
 Write a program ( using TDD ) that prints the numbers from 1 to 100. But for multiples of three print "Fizz" and for multiples of five print "Buzz". For numbers which are multiples of both print "FizzBuzz".
 
 Sample output: 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 ... etc
+
 ----------
 LEAP YEAR
 ----------
@@ -59,6 +60,7 @@ Test examples:
 LIST COMPARATOR
 ----------------
 You have two arrays in this kata, every array contains only unique elements. Your task is to calculate the number of elements in the first array which are also in the second array.
+
 --------------------
 HUMAN READABLE TIME
 --------------------
