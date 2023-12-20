@@ -4,7 +4,10 @@
     {
         public static List<int> Generate(int number)
         {
-            return [];
+            if (number < 2)
+                return [];
+
+            return new List<int> { number };
         }
     }
 }
