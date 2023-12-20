@@ -4,18 +4,15 @@
     {
         public static List<int> Generate(int number)
         {
-            if (number < 2)
-                return [];
-
-            var list = new List<int>();
+            List<int> primeFactors = [];
 
             while(number >= 2)
             {
                 number /= 2;
-                list.Add(2);
+                primeFactors.Add(2);
             }
 
-            return list;
+            return primeFactors;
         }
     }
 }
