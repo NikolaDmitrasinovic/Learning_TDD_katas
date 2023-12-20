@@ -7,7 +7,15 @@
             if (number < 2)
                 return [];
 
-            return [number];
+            var list = new List<int>();
+
+            while(number >= 2)
+            {
+                number /= 2;
+                list.Add(2);
+            }
+
+            return list;
         }
     }
 }
