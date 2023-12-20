@@ -43,7 +43,7 @@ namespace TestPrimeFactor
             // Act
 
             // Assert
-            PrimeFactor.Generate(6).Should().BeEquivalentTo([5]);
+            PrimeFactor.Generate(5).Should().BeEquivalentTo([5]);
         }
     }
 }
