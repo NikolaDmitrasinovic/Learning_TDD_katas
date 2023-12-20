@@ -12,5 +12,16 @@ namespace TestPrimeFactor
             // Assert
             PrimeFactor.Generate(1).Should().BeEmpty();
         }
+
+        [Fact]
+        public void Should_Return2AsPrimeFactor_ForNumber2()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            PrimeFactor.Generate(2).Should().BeEquivalentTo(new List<int>() { 2 });
+        }
     }
 }
