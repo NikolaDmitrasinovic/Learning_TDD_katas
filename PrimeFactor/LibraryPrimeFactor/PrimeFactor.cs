@@ -7,7 +7,7 @@
             if (number < 2)
                 return [];
 
-            return new List<int> { number };
+            return [number];
         }
     }
 }

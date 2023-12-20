@@ -21,7 +21,7 @@ namespace TestPrimeFactor
             // Act
 
             // Assert
-            PrimeFactor.Generate(2).Should().BeEquivalentTo(new List<int>() { 2 });
+            PrimeFactor.Generate(2).Should().BeEquivalentTo([2]);
         }
     }
 }
