@@ -34,5 +34,16 @@ namespace TestPrimeFactor
             // Assert
             PrimeFactor.Generate(4).Should().BeEquivalentTo([2, 2]);
         }
+
+        [Fact]
+        public void Should_ReturnPrimeFactors_ForNumber6()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            PrimeFactor.Generate(6).Should().BeEquivalentTo([5]);
+        }
     }
 }
