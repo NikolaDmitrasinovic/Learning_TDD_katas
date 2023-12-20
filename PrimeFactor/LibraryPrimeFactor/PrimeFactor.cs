@@ -2,9 +2,9 @@
 {
     public class PrimeFactor
     {
-        public static List<int> Generate(int v)
+        public static List<int> Generate(int number)
         {
-            return new List<int>();
+            return [];
         }
     }
 }
