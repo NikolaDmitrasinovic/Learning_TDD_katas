@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace TestStringCalculator
 {
     public class StringCalculatorTests
@@ -51,6 +53,21 @@ namespace TestStringCalculator
 
             // Assert
             result.Should().Be(3);
+        }
+
+        [Fact]
+        public void Should_ThrowException_ForNegativeNumbers()
+        {
+            // Arrange
+            var numbers = "-1,2,-3";
+
+            // Act
+
+            // Assert
+            typeof(StringCalculator).Invoking(x => StringCalculator.Add(numbers))
+                .Should()
+                .Throw<ArgumentException>()
+                .WithMessage("negatives not allowed (-1)(-3)");
         }
     }
 }
