@@ -2,7 +2,7 @@
 {
     public class StringCalculator
     {
-        public static object Add(string v)
+        public static int Add(string numbersString)
         {
             return 0;
         }
