@@ -37,5 +37,17 @@ namespace TestStringCalculator
             // Assert
             result.Should().Be(3);
         }
+
+        [Fact]
+        public void Should_ReturnSum_ForNumbersStringInput()
+        {
+            // Arrange
+
+            // Act
+            var result = StringCalculator.Add("1,2,3,20");
+
+            // Assert
+            result.Should().Be(26);
+        }
     }
 }
