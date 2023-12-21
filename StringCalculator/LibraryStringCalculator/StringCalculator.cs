@@ -7,10 +7,9 @@
             if (string.IsNullOrEmpty(numbersString))
                 return 0;
 
-            if (numbersString.Length == 3)
-                return int.Parse(numbersString[0].ToString()) + int.Parse(numbersString[2].ToString());
+            string[] numbers = numbersString.Split(',');
 
-            return int.Parse(numbersString);
+            return numbers.Sum(n => int.Parse(n));
         }
     }
 }
