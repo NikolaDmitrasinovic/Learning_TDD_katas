@@ -7,7 +7,7 @@
             if (string.IsNullOrEmpty(numbersString))
                 return 0;
 
-            string[] numbers = numbersString.Split(',');
+            string[] numbers = numbersString.Split(',', '\n');
 
             return numbers.Sum(n => int.Parse(n));
         }
