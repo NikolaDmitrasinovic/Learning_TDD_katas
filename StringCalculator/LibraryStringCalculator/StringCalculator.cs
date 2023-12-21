@@ -4,17 +4,21 @@
     {
         public static int Add(string numbersString)
         {
-            if (string.IsNullOrEmpty(numbersString))
-                return 0;
+            char[] delimiter = ReturnDelimiter(numbersString);
 
-            char delimiter = ',';
-
-            if (numbersString.StartsWith("//"))
-                delimiter = numbersString[2];
-
-            string[] numbers = numbersString.Split(delimiter, '\n');
+            string[] numbers = numbersString.Split(delimiter);
 
             return numbers.Sum(s => int.TryParse(s, out int n) ? n : 0);
+        }
+
+        private static char[] ReturnDelimiter(string numbersString)
+        {
+            List<char> delimiter = ['\n', ','];
+
+            if (numbersString.StartsWith("//"))
+                delimiter.Add(numbersString[2]);
+
+            return [.. delimiter];
         }
     }
 }
