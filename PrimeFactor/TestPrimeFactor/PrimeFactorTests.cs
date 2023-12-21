@@ -13,48 +13,19 @@ namespace TestPrimeFactor
             PrimeFactor.Generate(1).Should().BeEmpty();
         }
 
-        [Fact]
-        public void Should_Return2AsPrimeFactor_ForNumber2()
+        [Theory]
+        [InlineData(2, new int[] { 2 })]
+        [InlineData(4, new int[] { 2, 2 })]
+        [InlineData(6, new int[] { 2, 3 })]
+        [InlineData(100, new int[] { 2, 2, 5, 5 })]
+        public void Should_ReturnPrimeFactors_ForNumber(int number, int[] primeFactors)
         {
             // Arrange
 
             // Act
 
             // Assert
-            PrimeFactor.Generate(2).Should().BeEquivalentTo([2]);
-        }
-
-        [Fact]
-        public void Should_ReturnPrimeFactors_ForNumber4()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            PrimeFactor.Generate(4).Should().BeEquivalentTo([2, 2]);
-        }
-
-        [Fact]
-        public void Should_ReturnPrimeFactors_ForNumber6()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            PrimeFactor.Generate(5).Should().BeEquivalentTo([5]);
-        }
-
-        [Fact]
-        public void Should_ReturnPrimeFactors_ForNumber100()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-            PrimeFactor.Generate(100).Should().BeEquivalentTo([2, 2, 5, 5]);
+            PrimeFactor.Generate(number).Should().BeEquivalentTo(primeFactors);
         }
     }
 }

@@ -5,16 +5,10 @@
         public static List<int> Generate(int number)
         {
             List<int> primeFactors = [];
-            int prime = 2;
 
-            while (number >= 2)
-            {
-                while (number % prime != 0)
-                    prime++;
-
-                number /= prime;
-                primeFactors.Add(prime);
-            }
+            for (int candidate = 2; number > 1; candidate++)
+                for (; number % candidate == 0; number /= candidate)
+                    primeFactors.Add(candidate);
 
             return primeFactors;
         }
