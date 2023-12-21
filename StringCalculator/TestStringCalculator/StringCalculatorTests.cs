@@ -14,40 +14,19 @@ namespace TestStringCalculator
             result.Should().Be(0);
         }
 
-        [Fact]
-        public void Should_ReturnInt_ForStringInput()
+        [Theory]
+        [InlineData("1", 1)]
+        [InlineData("1,2", 3)]
+        [InlineData("1,2,3", 6)]
+        public void Should_ReturnInt_ForStringInput(string numbersString, int expectedSum)
         {
             // Arrange
 
             // Act
-            var result = StringCalculator.Add("1");
+            var result = StringCalculator.Add(numbersString);
 
             // Assert
-            result.Should().Be(1);
-        }
-
-        [Fact]
-        public void Should_ReturnSum_For2NumbersStringInput()
-        {
-            // Arrange
-
-            // Act
-            var result = StringCalculator.Add("1,2");
-
-            // Assert
-            result.Should().Be(3);
-        }
-
-        [Fact]
-        public void Should_ReturnSum_ForNumbersStringInput()
-        {
-            // Arrange
-
-            // Act
-            var result = StringCalculator.Add("1,2,3,20");
-
-            // Assert
-            result.Should().Be(26);
+            result.Should().Be(expectedSum);
         }
     }
 }
