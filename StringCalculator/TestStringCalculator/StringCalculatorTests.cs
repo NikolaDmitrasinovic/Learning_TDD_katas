@@ -28,5 +28,17 @@ namespace TestStringCalculator
             // Assert
             result.Should().Be(expectedSum);
         }
+
+        [Fact]
+        public void Should_HandleNewLines()
+        {
+            // Arrange
+
+            // Act
+            var result = StringCalculator.Add("1\n2,3");
+
+            // Assert
+            result.Should().Be(6);
+        }
     }
 }
