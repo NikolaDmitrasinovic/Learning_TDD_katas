@@ -7,9 +7,14 @@
             if (string.IsNullOrEmpty(numbersString))
                 return 0;
 
-            string[] numbers = numbersString.Split(',', '\n');
+            char delimiter = ',';
 
-            return numbers.Sum(n => int.Parse(n));
+            if (numbersString.StartsWith("//"))
+                delimiter = numbersString[2];
+
+            string[] numbers = numbersString.Split(delimiter, '\n');
+
+            return numbers.Sum(s => int.TryParse(s, out int n) ? n : 0);
         }
     }
 }
