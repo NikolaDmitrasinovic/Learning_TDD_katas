@@ -6,9 +6,15 @@
         {
             char[] delimiter = ReturnDelimiter(numbersString);
 
-            string[] numbers = numbersString.Split(delimiter);
+            IEnumerable<int> numbers = numbersString.Split(delimiter).Select(s => int.TryParse(s, out int n) ? n : 0);
 
-            return numbers.Sum(s => int.TryParse(s, out int n) ? n : 0);
+            IEnumerable<int> negativeNumbers = numbers.Where(negative => negative < 0);
+            if (negativeNumbers.Any())
+            {
+                throw new ArgumentException("negatives not allowed (" + string.Join(")(", negativeNumbers) + ")");
+            }
+
+            return numbers.Sum();
         }
 
         private static char[] ReturnDelimiter(string numbersString)
