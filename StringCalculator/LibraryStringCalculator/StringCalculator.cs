@@ -4,10 +4,10 @@
     {
         public static int Add(string numbersString)
         {
-            if (!string.IsNullOrEmpty(numbersString))
-                return int.Parse(numbersString);
+            if (string.IsNullOrEmpty(numbersString))
+                return 0;
 
-            return 0;
+            return int.Parse(numbersString);
         }
     }
 }
