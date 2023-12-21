@@ -40,5 +40,17 @@ namespace TestStringCalculator
             // Assert
             result.Should().Be(6);
         }
+
+        [Fact]
+        public void Should_SupportDifferentDelimiters()
+        {
+            // Arrange
+
+            // Act
+            var result = StringCalculator.Add("//;\n1;2");
+
+            // Assert
+            result.Should().Be(3);
+        }
     }
 }
