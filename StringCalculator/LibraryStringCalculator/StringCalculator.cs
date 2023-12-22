@@ -8,11 +8,16 @@
 
             IEnumerable<int> numbers = numbersString.Split(delimiter).Select(s => int.TryParse(s, out int n) ? n : 0);
 
-            CheckForNegativeNumbers(numbers);
+            numbers = RemoveLargeNumbers(numbers);
 
-            numbers = numbers.Where(x => x <= 1000);
+            CheckForNegativeNumbers(numbers);            
 
             return numbers.Sum();
+        }
+
+        private static IEnumerable<int> RemoveLargeNumbers(IEnumerable<int> numbers)
+        {
+            return numbers.Where(x => x <= 1000);
         }
 
         private static void CheckForNegativeNumbers(IEnumerable<int> numbers)
