@@ -69,5 +69,17 @@ namespace TestStringCalculator
                 .Throw<ArgumentException>()
                 .WithMessage("negatives not allowed (-1)(-3)");
         }
+
+        [Fact]
+        public void Should_IgnoreNumbersBiggerThan1000()
+        {
+            // Arrange
+
+            // Act
+            var result = StringCalculator.Add("32145,3");
+
+            // Assert
+            result.Should().Be(3);
+        }
     }
 }
