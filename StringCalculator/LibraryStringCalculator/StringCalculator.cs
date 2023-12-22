@@ -10,6 +10,8 @@
 
             CheckForNegativeNumbers(numbers);
 
+            numbers = numbers.Where(x => x <= 1000);
+
             return numbers.Sum();
         }
 
