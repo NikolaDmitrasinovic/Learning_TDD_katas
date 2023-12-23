@@ -81,5 +81,17 @@ namespace TestStringCalculator
             // Assert
             result.Should().Be(3);
         }
+
+        [Fact]
+        public void Should_HandleDelimitersOfAnyLength()
+        {
+            // Arrange
+
+            // Act
+            var result = StringCalculator.Add("//[***]\n1***1***1");
+
+            // Assert
+            result.Should().Be(3);
+        }
     }
 }
