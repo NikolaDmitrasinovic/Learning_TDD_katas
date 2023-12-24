@@ -88,7 +88,29 @@ For example:
 - 100 should return 2, 2, 5, 5
 - 2 should return 2
 - Smaller than 2 should return an empty list
+------------------
+STRING CALCULATOR
+------------------
+Create StringCalculator class with int Add(string numbers) method
+* The method can take up to two numbers separated by commas and will return their sum
+	Example: "" or "1" or "1,2"
+* For an empty string it will return 0
 
+* Allow the Add method to handle an unknown amount of numbers
+* Allow the Add method to handle new lines between numbers
+	Example: "1\\n2,3" will equal 6
+* Support different delimiters, but they are optional ( "//\[delimiter]\\n\[numbers]" )
+	Example: "//;\\n1;2"
+* Calling Add with a negative number will throw an exception "negatives not allowed" and the negative that was passed, all of them in case of multiple
+
+Continue if you can finish previous steps in less than 30 minutes.
+
+* Numbers bigger than 1000 should be ignored ( 2 + 1001 = 2 )
+* Delimiters can be of any length in format of "//\[delimiter]\\n"
+	Example: "//\[\*\*\*]\\n1\*\*\*2\*\*\*3*"
+* Allow multiple delimiters like "//\[delimiter1]\[delimiter2]\\n"
+	Example: "//\[\*]\[&]\\n1\**2&3"
+* Make sure you can also handle multiple delimiters with length longer than one char
 -------
 TENNIS
 -------
