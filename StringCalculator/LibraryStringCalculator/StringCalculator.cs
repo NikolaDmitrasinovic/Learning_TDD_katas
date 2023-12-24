@@ -25,17 +25,15 @@
         {
             List<char> delimiter = ['\n', ','];
 
-            if (numbersString.StartsWith("//["))
-            {
-                string[] delimiters = numbersString.Split('[', ']');
-                foreach (var c in delimiters[1])
-                {
-                    delimiter.Add(c);
-                }
-            }
+            if (!numbersString.StartsWith("//"))
+                return [.. delimiter];
 
-            if (numbersString.StartsWith("//"))
-                delimiter.Add(numbersString[2]);
+            string[] checkForDelimiters = numbersString.Split('\n');
+            foreach (char c in checkForDelimiters[0])
+            {
+                if (!int.TryParse(c.ToString(), out int num))
+                    delimiter.Add(c);
+            }
 
             return [.. delimiter];
         }
