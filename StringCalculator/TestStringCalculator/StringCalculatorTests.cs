@@ -20,7 +20,7 @@ namespace TestStringCalculator
         [InlineData("1", 1)]
         [InlineData("1,2", 3)]
         [InlineData("1,2,3", 6)]
-        public void Should_ReturnInt_ForStringInput(string numbersString, int expectedSum)
+        public void Should_ReturnSumOfNumbers_ForStringInput(string numbersString, int expectedSum)
         {
             // Arrange
 
@@ -43,16 +43,20 @@ namespace TestStringCalculator
             result.Should().Be(6);
         }
 
-        [Fact]
-        public void Should_SupportDifferentDelimiters()
+        [Theory]
+        [InlineData("//;\n2;2", 4)]
+        [InlineData("//[***]\n1***1***1", 3)]
+        [InlineData("//[*][&]\n1*2&3", 6)]
+        [InlineData("//[**][&&&&]\n2*4&4", 10)]
+        public void Should_HandleDifferentDelimiters(string input, int result)
         {
             // Arrange
 
             // Act
-            var result = StringCalculator.Add("//;\n1;2");
+            var sumOfNumbers = StringCalculator.Add(input);
 
             // Assert
-            result.Should().Be(3);
+            sumOfNumbers.Should().Be(result);
         }
 
         [Fact]
@@ -77,42 +81,6 @@ namespace TestStringCalculator
 
             // Act
             var result = StringCalculator.Add("32145,3");
-
-            // Assert
-            result.Should().Be(3);
-        }
-
-        [Fact]
-        public void Should_HandleDelimitersOfAnyLength()
-        {
-            // Arrange
-
-            // Act
-            var result = StringCalculator.Add("//[***]\n1***1***1");
-
-            // Assert
-            result.Should().Be(3);
-        }
-
-        [Fact]
-        public void Should_HandleMultipleDelimiters()
-        {
-            // Arrange
-
-            // Act
-            var result = StringCalculator.Add("//[*][&]\n1*1&1");
-
-            // Assert
-            result.Should().Be(3);
-        }
-
-        [Fact]
-        public void Should_HandleMultipleDelimitersOfAnyLength()
-        {
-            // Arrange
-
-            // Act
-            var result = StringCalculator.Add("//[**][&&&&]\n1*1&1");
 
             // Assert
             result.Should().Be(3);
