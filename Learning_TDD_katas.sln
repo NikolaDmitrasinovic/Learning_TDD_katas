@@ -59,9 +59,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestPrimeFactor", "PrimeFac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StringCalculator", "StringCalculator", "{523C8020-31FE-40DF-B79C-C1C15E634D4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStringCalculator", "StringCalculator\TestStringCalculator\TestStringCalculator.csproj", "{06EEE466-FA93-47BE-99FB-6ECA99A78ADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestStringCalculator", "StringCalculator\TestStringCalculator\TestStringCalculator.csproj", "{06EEE466-FA93-47BE-99FB-6ECA99A78ADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryStringCalculator", "StringCalculator\LibraryStringCalculator\LibraryStringCalculator.csproj", "{7F25F357-C577-4752-988B-6F7078E43080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryStringCalculator", "StringCalculator\LibraryStringCalculator\LibraryStringCalculator.csproj", "{7F25F357-C577-4752-988B-6F7078E43080}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WordWrapper", "WordWrapper", "{490C0508-AF20-4CC8-9C6D-C8021050D7CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWordWrapper", "WordWrapper\TestWordWrapper\TestWordWrapper.csproj", "{933DF34E-9E6F-4A0B-B447-084618CC043C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryWordWrapper", "WordWrapper\LibraryWordWrapper\LibraryWordWrapper.csproj", "{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +155,14 @@ Global
 		{7F25F357-C577-4752-988B-6F7078E43080}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F25F357-C577-4752-988B-6F7078E43080}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F25F357-C577-4752-988B-6F7078E43080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933DF34E-9E6F-4A0B-B447-084618CC043C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933DF34E-9E6F-4A0B-B447-084618CC043C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933DF34E-9E6F-4A0B-B447-084618CC043C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933DF34E-9E6F-4A0B-B447-084618CC043C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +188,8 @@ Global
 		{95CDC6B6-6013-4D5F-8E16-F92F8AADD0D6} = {44C7D532-1CEA-48DA-A07C-3DCF2473529A}
 		{06EEE466-FA93-47BE-99FB-6ECA99A78ADB} = {523C8020-31FE-40DF-B79C-C1C15E634D4C}
 		{7F25F357-C577-4752-988B-6F7078E43080} = {523C8020-31FE-40DF-B79C-C1C15E634D4C}
+		{933DF34E-9E6F-4A0B-B447-084618CC043C} = {490C0508-AF20-4CC8-9C6D-C8021050D7CF}
+		{1BA03C8D-EC18-414A-B14F-F6FA1FA80BEC} = {490C0508-AF20-4CC8-9C6D-C8021050D7CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D125AAD9-92BC-4DFF-91F1-3AAC78B58B06}
