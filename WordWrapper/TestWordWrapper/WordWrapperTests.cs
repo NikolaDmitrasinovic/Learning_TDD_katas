@@ -2,40 +2,32 @@ namespace TestWordWrapper
 {
     public class WordWrapperTests
     {
-        [Fact]
-        public void Should_ReturnOneLineString_ForNoSetColumn()
+        [Theory]
+        [InlineData("", 0 , "")]
+        [InlineData("text", 0 , "text")]
+        [InlineData("line1 line2", 5 , "line1\nline2")]
+        [InlineData("Long Text Wrap", 5 , "Long \nText \nWrap")]
+        public void Should_FormatText_ToFitColumnlength(string input, int column, string result)
         {
             // Arrange
 
             // Act
-            var wrappedText = WordWrapper.Wrap("one line text");
+            var wrappedText = WordWrapper.Wrap(input, column);
 
             // Assert
-            wrappedText.Should().Be("one line text");
+            wrappedText.Should().Be(result);
         }
 
-        [Fact]
-        public void Should_BreakeSimpleText()
-        {
-            // Arrange
+        //[Fact]
+        //public void Should_TryNotToBreakWords()
+        //{
+        //    // Arrange
 
-            // Act
-            var wrappedText = WordWrapper.Wrap("ab", 1);
+        //    // Act
+        //    var wrappedText = WordWrapper.Wrap("one word and another", 5);
 
-            // Assert
-            wrappedText.Should().Be("a\nb");
-        }
-
-        [Fact]
-        public void Should_InsertLineBreakes_ForColumnNumber()
-        {
-            // Arrange
-
-            // Act
-            var wrappedText = WordWrapper.Wrap("abcabcabc", 3);
-
-            // Assert
-            wrappedText.Should().Be("abc\nabc\nabc");
-        }
+        //    // Assert
+        //    wrappedText.Should().Be("one \nword \nand \nanother");
+        //}
     }
 }
