@@ -6,7 +6,7 @@ namespace TestWordWrapper
         [InlineData("", 0 , "")]
         [InlineData("text", 0 , "text")]
         [InlineData("line1 line2", 5 , "line1\nline2")]
-        [InlineData("Long Text Wrap", 5 , "Long \nText \nWrap")]
+        [InlineData("abcabcabc   ", 3 , "abc\nabc\nabc\n")]
         public void Should_FormatText_ToFitColumnlength(string input, int column, string result)
         {
             // Arrange
@@ -24,10 +24,10 @@ namespace TestWordWrapper
             // Arrange
 
             // Act
-            var wrappedText = WordWrapper.Wrap("one word and another", 5);
+            var wrappedText = WordWrapper.Wrap("don't break words", 7);
 
             // Assert
-            wrappedText.Should().Be("one \nword \nand \nanother");
+            wrappedText.Should().Be("don't \nbreak \nwords");
         }
     }
 }
