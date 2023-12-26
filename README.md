@@ -125,3 +125,9 @@ Match Rules:
 * There are [best of 3] and [best of 5] matches in terms of sets
 * To win a set player must win at least 6 games, and have at least two games lead against the opponent
 * If both player have 6 games won the [tie braker] is played 
+-------------
+WORD WRAPPER
+-------------
+You write a class called Wrapper, that has a single static function named wrap that takes two arguments, a string, and a column number. The function returns the string, but with line breaks inserted at just the right places to make sure that no line is longer than the column number. You try to break lines at word boundaries.
+
+Like a word processor, break the line by replacing the last space in a line with a newline.
