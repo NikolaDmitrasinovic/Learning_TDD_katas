@@ -2,9 +2,12 @@
 {
     public class WordWrapper
     {
-        public static string Wrap(string textToWrap)
+        public static string Wrap(string textToWrap, int columnNumber = 0)
         {
-            return textToWrap;
+            if (columnNumber == 0)
+                return textToWrap;
+
+            return textToWrap[0] + "\n" + textToWrap[1];
         }
     }
 }
