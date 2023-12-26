@@ -18,16 +18,16 @@ namespace TestWordWrapper
             wrappedText.Should().Be(result);
         }
 
-        //[Fact]
-        //public void Should_TryNotToBreakWords()
-        //{
-        //    // Arrange
+        [Fact]
+        public void Should_TryNotToBreakWords()
+        {
+            // Arrange
 
-        //    // Act
-        //    var wrappedText = WordWrapper.Wrap("one word and another", 5);
+            // Act
+            var wrappedText = WordWrapper.Wrap("one word and another", 5);
 
-        //    // Assert
-        //    wrappedText.Should().Be("one \nword \nand \nanother");
-        //}
+            // Assert
+            wrappedText.Should().Be("one \nword \nand \nanother");
+        }
     }
 }
