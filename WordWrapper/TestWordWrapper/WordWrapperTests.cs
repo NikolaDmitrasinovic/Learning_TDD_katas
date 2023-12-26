@@ -25,5 +25,17 @@ namespace TestWordWrapper
             // Assert
             wrappedText.Should().Be("a\nb");
         }
+
+        [Fact]
+        public void Should_InsertLineBreakes_ForColumnNumber()
+        {
+            // Arrange
+
+            // Act
+            var wrappedText = WordWrapper.Wrap("abcabcabc", 3);
+
+            // Assert
+            wrappedText.Should().Be("abc\nabc\nabc");
+        }
     }
 }
