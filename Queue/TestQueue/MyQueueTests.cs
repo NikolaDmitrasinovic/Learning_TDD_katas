@@ -19,5 +19,20 @@
             // Assert
             myQueue.Count.Should().Be(numberOfElements);
         }
+
+        [Fact]
+        public void Should_ShowLastElementInTheQueue()
+        {
+            // Arrange
+            var myQueue = new MyQueue<string>();
+
+            // Act
+            myQueue.Enqueue("first element");
+            myQueue.Enqueue("last element");
+            var lastElement = myQueue.Peek();
+
+            // Assert
+            lastElement.Should().Be("last element");
+        }
     }
 }
