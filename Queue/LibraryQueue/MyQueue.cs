@@ -1,4 +1,5 @@
 ﻿
+
 namespace LibraryQueue
 {
     public class MyQueue<T>
@@ -17,6 +18,11 @@ namespace LibraryQueue
         {
             queue.Add(element);
             Count++;
+        }
+
+        public T Peek()
+        {
+            return queue[Count - 1];
         }
     }
 }
