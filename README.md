@@ -43,24 +43,6 @@ FizzBuzz
 Write a program ( using TDD ) that prints the numbers from 1 to 100. But for multiples of three print "Fizz" and for multiples of five print "Buzz". For numbers which are multiples of both print "FizzBuzz".
 
 Sample output: 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 ... etc
-
-----------
-LEAP YEAR
-----------
-Write a function that returns true or false depending on whether its input integer is a leap year or not.
-
-A leap year is divisible by 4 but is not otherwise divisible by 100 unless it is also divisible by 400.
-
-Test examples: 
-* 2001 typical common year
-* 1996 typical leap year
-* 2000 atypical leap year
-* 1900 atypical common year
-----------------
-LIST COMPARATOR
-----------------
-You have two arrays in this kata, every array contains only unique elements. Your task is to calculate the number of elements in the first array which are also in the second array.
-
 --------------------
 HUMAN READABLE TIME
 --------------------
@@ -77,6 +59,22 @@ Solve by testing for:
 - 86_399
 - 359_999 ( maximum valid value )
 - any value greater than valid maximum
+----------
+LEAP YEAR
+----------
+Write a function that returns true or false depending on whether its input integer is a leap year or not.
+
+A leap year is divisible by 4 but is not otherwise divisible by 100 unless it is also divisible by 400.
+
+Test examples: 
+* 2001 typical common year
+* 1996 typical leap year
+* 2000 atypical leap year
+* 1900 atypical common year
+----------------
+LIST COMPARATOR
+----------------
+You have two arrays in this kata, every array contains only unique elements. Your task is to calculate the number of elements in the first array which are also in the second array.
 --------------
 PRIME FACTORS
 --------------
@@ -88,6 +86,15 @@ For example:
 - 100 should return 2, 2, 5, 5
 - 2 should return 2
 - Smaller than 2 should return an empty list
+------
+Queue
+------
+Implement your own queue (existing .NET implementations are not allowed (list, array, …)).
+
+- The queue should have the following methods:
+- Enqueue(object): Adds an element to the queue.
+- Dequeue(): Returns the first element and removes it from the queue.
+- Peek(): Returns the first element without removing it.
 ------------------
 STRING CALCULATOR
 ------------------
