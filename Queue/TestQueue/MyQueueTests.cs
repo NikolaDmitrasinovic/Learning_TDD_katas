@@ -34,5 +34,21 @@
             // Assert
             lastElement.Should().Be("last element");
         }
+
+        [Fact]
+        public void Should_ReturnLastElement_AndRemoveItFromTheQueue()
+        {
+            // Arrange
+            var myQueue = new MyQueue<double>();
+
+            // Act
+            myQueue.Enqueue(2.5);
+            myQueue.Enqueue(5.2);
+            var lastElement = myQueue.Dequeue();
+
+            // Assert
+            lastElement.Should().Be(5.2);
+            myQueue.Count.Should().Be(1);
+        }
     }
 }
