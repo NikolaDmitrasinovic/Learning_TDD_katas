@@ -23,13 +23,18 @@
 
         public T Dequeue()
         {
-            if (queue.Count == 0)
-                throw new InvalidOperationException("Can not execute on empty queue");
+            CheckForEmptyQueue();
 
             var element = queue[0];
             queue.RemoveAt(0);
 
             return element;
+        }
+
+        private void CheckForEmptyQueue()
+        {
+            if (queue.Count == 0)
+                throw new InvalidOperationException("Can not execute on empty queue");
         }
     }
 }
