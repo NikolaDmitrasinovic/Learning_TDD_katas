@@ -21,7 +21,7 @@
         }
 
         [Fact]
-        public void Should_ReturnLastElement()
+        public void Should_ReturnFirstElement()
         {
             // Arrange
             var myQueue = new MyQueue<string>();
@@ -32,12 +32,12 @@
             var lastElement = myQueue.Peek();
 
             // Assert
-            lastElement.Should().Be("last element");
+            lastElement.Should().Be("first element");
             myQueue.Count.Should().Be(2);
         }
 
         [Fact]
-        public void Should_ReturnLastElement_AndRemoveItFromTheQueue()
+        public void Should_ReturnFirstlement_AndRemoveItFromTheQueue()
         {
             // Arrange
             var myQueue = new MyQueue<double>();
@@ -45,13 +45,11 @@
             // Act
             myQueue.Enqueue(2.5);
             myQueue.Enqueue(5.2);
-            myQueue.Enqueue(2.5);
             var lastElement = myQueue.Dequeue();
 
             // Assert
             lastElement.Should().Be(2.5);
-            myQueue.Count.Should().Be(2);
-            myQueue.Peek().Should().Be(5.2);
+            myQueue.Count.Should().Be(1);
         }
     }
 }
