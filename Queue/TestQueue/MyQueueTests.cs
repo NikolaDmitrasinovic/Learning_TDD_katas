@@ -33,6 +33,7 @@
 
             // Assert
             lastElement.Should().Be("last element");
+            myQueue.Count.Should().Be(2);
         }
 
         [Fact]
@@ -44,11 +45,13 @@
             // Act
             myQueue.Enqueue(2.5);
             myQueue.Enqueue(5.2);
+            myQueue.Enqueue(2.5);
             var lastElement = myQueue.Dequeue();
 
             // Assert
-            lastElement.Should().Be(5.2);
-            myQueue.Count.Should().Be(1);
+            lastElement.Should().Be(2.5);
+            myQueue.Count.Should().Be(2);
+            myQueue.Peek().Should().Be(5.2);
         }
     }
 }
