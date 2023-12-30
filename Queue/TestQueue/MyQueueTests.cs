@@ -5,7 +5,7 @@
         [Theory]
         [InlineData(1)]
         [InlineData(10)]
-        public void Should_AddElementsToQueue(int numberOfElements)
+        public void Should_AddElements(int numberOfElements)
         {
             // Arrange
             var myQueue = new MyQueue<int>();
@@ -21,7 +21,7 @@
         }
 
         [Fact]
-        public void Should_ShowLastElementInTheQueue()
+        public void Should_ReturnLastElement()
         {
             // Arrange
             var myQueue = new MyQueue<string>();
