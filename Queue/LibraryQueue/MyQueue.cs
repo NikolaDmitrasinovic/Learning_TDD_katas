@@ -23,6 +23,9 @@
 
         public T Dequeue()
         {
+            if (queue.Count == 0)
+                throw new InvalidOperationException("Can not execute on empty queue");
+
             var element = queue[0];
             queue.RemoveAt(0);
 
