@@ -1,36 +1,31 @@
-﻿
-
-
-namespace LibraryQueue
+﻿namespace LibraryQueue
 {
     public class MyQueue<T>
     {
-        private List<T> queue;
+        private readonly List<T> queue;
 
-        public int Count { get; private set; }
+        public int Count => queue.Count;
 
         public MyQueue()
         {
-            Count = 0;
             queue = [];
         }
 
         public void Enqueue(T element)
         {
             queue.Add(element);
-            Count++;
         }
 
         public T Peek()
         {
-            return queue[Count - 1];
+            return queue[0];
         }
 
         public T Dequeue()
         {
-            var element = queue[Count - 1];
-            queue.RemoveAt(Count - 1);
-            Count--;
+            var element = queue[0];
+            queue.RemoveAt(0);
+
             return element;
         }
     }
