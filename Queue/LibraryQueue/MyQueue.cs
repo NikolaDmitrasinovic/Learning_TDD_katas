@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace LibraryQueue
 {
     public class MyQueue<T>
@@ -23,6 +24,14 @@ namespace LibraryQueue
         public T Peek()
         {
             return queue[Count - 1];
+        }
+
+        public T Dequeue()
+        {
+            var element = queue[Count - 1];
+            queue.RemoveAt(Count - 1);
+            Count--;
+            return element;
         }
     }
 }
