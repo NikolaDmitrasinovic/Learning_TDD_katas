@@ -51,5 +51,20 @@
             lastElement.Should().Be(2.5);
             myQueue.Count.Should().Be(1);
         }
+
+        [Fact]
+        public void Should_ThrowException_ForDequeueCallOnEmptyQueue()
+        {
+            // Arrange
+            var myQueue = new MyQueue<double>();
+
+            // Act
+
+            // Assert
+            myQueue.Invoking(x => myQueue.Dequeue())
+                .Should()
+                .Throw<InvalidOperationException>()
+                .WithMessage("Can not execute on empty queue");
+        }
     }
 }
