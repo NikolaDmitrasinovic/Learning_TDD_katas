@@ -3,19 +3,19 @@ namespace LibraryStack
 {
     public class MyStack
     {
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
-        private List<object> items;
+        private readonly List<object> items;
 
         public MyStack()
         {
             Count = 0;
-            items = new List<object>();
+            items = [];
         }
 
-        public void Push(object v)
+        public void Push(object item)
         {
-            items.Add(v);
+            items.Add(item);
             Count++;
         }
     }
