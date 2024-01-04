@@ -1,4 +1,5 @@
 ﻿
+
 namespace LibraryStack
 {
     public class MyStack
@@ -17,6 +18,12 @@ namespace LibraryStack
         {
             items.Add(item);
             Count++;
+        }
+
+        public object Pop()
+        {
+            Count--;
+            return items[Count];
         }
     }
 }
