@@ -2,17 +2,22 @@ namespace TestStack
 {
     public class MyStackTests
     {
-        [Fact]
-        public void Should_AddElement()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(5)]
+        public void Should_AddElement(int noOfElements)
         {
             // Arrange
             var myStack = new MyStack();
 
             // Act
-            myStack.Push(1);
+            for (int i = 0; i < noOfElements; i++)
+            {
+                myStack.Push(i);
+            }
 
             // Assert
-            myStack.Count.Should().Be(1);
+            myStack.Count.Should().Be(noOfElements);
         }
 
         [Fact]
