@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace LibraryStack
 {
     public class MyStack
@@ -23,6 +24,11 @@ namespace LibraryStack
             object lastElement = items[^1];
             items.RemoveAt(Count - 1);
             return lastElement;
+        }
+
+        public object Peek()
+        {
+            return items[^1];
         }
     }
 }
