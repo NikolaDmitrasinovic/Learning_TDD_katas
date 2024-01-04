@@ -29,5 +29,20 @@ namespace TestStack
             myStack.Pop().Should().Be(6);
             myStack.Count.Should().Be(1);
         }
+
+        [Fact]
+        public void Should_ShowLastElement()
+        {
+            // Arrange
+            var myStack = new MyStack();
+
+            // Act
+            myStack.Push(5);
+            myStack.Push(6);
+
+            // Assert
+            myStack.Peek().Should().Be(6);
+            myStack.Count.Should().Be(2);
+        }
     }
 }
