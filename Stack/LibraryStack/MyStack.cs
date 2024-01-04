@@ -3,27 +3,26 @@
 namespace LibraryStack
 {
     public class MyStack
-    {
-        public int Count { get; private set; }
-
+    { 
         private readonly List<object> items;
+
+        public int Count => items.Count;
 
         public MyStack()
         {
-            Count = 0;
             items = [];
         }
 
         public void Push(object item)
         {
             items.Add(item);
-            Count++;
         }
 
         public object Pop()
         {
-            Count--;
-            return items[Count];
+            object lastElement = items[^1];
+            items.RemoveAt(Count - 1);
+            return lastElement;
         }
     }
 }
