@@ -26,7 +26,7 @@ namespace TestStack
             myStack.Push(6);
 
             // Assert
-            myStack.Pop().Should().Be(2);
+            myStack.Pop().Should().Be(6);
             myStack.Count.Should().Be(1);
         }
     }
