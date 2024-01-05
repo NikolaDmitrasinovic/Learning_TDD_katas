@@ -1,5 +1,4 @@
-﻿
-namespace LibraryRecentlyUsedList
+﻿namespace LibraryRecentlyUsedList
 {
     public class RecentlyUsedList
     {
@@ -17,6 +16,11 @@ namespace LibraryRecentlyUsedList
             RecentItems.Remove(recentItem);
 
             RecentItems.Insert(0, recentItem);
+        }
+
+        public string ReturnRecentItem(int index)
+        {
+            return RecentItems[index];
         }
     }
 }
