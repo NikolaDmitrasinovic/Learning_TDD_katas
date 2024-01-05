@@ -41,5 +41,21 @@ namespace TestRecentlyUsedList
             recentlyUsedList.NumberOfRecentItems.Should().Be(2);
             recentlyUsedList.RecentItems[0].Should().Be("newer item");
         }
+
+        [Fact]
+        public void Should_MoveDuplicateInsertionsToFront_RatherThanAddingThem()
+        {
+            // Arrange
+            var recentlyUsedList = new RecentlyUsedList();
+
+            // Act
+            recentlyUsedList.AddRecentItem("first item");
+            recentlyUsedList.AddRecentItem("second item");
+            recentlyUsedList.AddRecentItem("first item");
+
+            // Assert
+            recentlyUsedList.NumberOfRecentItems.Should().Be(2);
+            recentlyUsedList.RecentItems[0].Should().Be("second item");
+        }
     }
 }
