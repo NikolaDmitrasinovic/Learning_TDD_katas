@@ -14,17 +14,23 @@ namespace TestRecentlyUsedList
             recentlyUsedList.NumberOfRecentItems.Should().Be(0);
         }
 
-        [Fact]
-        public void Should_AddItem_ToTheList()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(10)]
+        public void Should_AddItems_ToTheList(int numberOfItems)
         {
             // Arrange
             var recentlyUsedList = new RecentlyUsedList();
 
             // Act
-            recentlyUsedList.AddRecentItem("item1");
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                recentlyUsedList.AddRecentItem("item" + i);
+            }            
 
             // Assert
-            recentlyUsedList.NumberOfRecentItems.Should().Be(1);
+            recentlyUsedList.NumberOfRecentItems.Should().Be(numberOfItems);
         }
 
         [Fact]
