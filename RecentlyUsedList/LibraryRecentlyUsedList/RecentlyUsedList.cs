@@ -2,28 +2,32 @@
 {
     public class RecentlyUsedList
     {
-        public List<string> RecentItems { get; private set; }
-
-        public int NumberOfRecentItems => RecentItems.Count;
+        private readonly List<string> recentItems;
+        public int NumberOfRecentItems => recentItems.Count;
 
         public RecentlyUsedList()
         {
-            RecentItems = [];
+            recentItems = [];
         }
 
         public void AddRecentItem(string recentItem)
         {
-            RecentItems.Remove(recentItem);
+            recentItems.Remove(recentItem);
 
-            RecentItems.Insert(0, recentItem);
+            recentItems.Insert(0, recentItem);
         }
 
         public string ReturnRecentItem(int index)
         {
-            if (RecentItems.Count < index || RecentItems.Count == 0)
+            if (IsOutOfRange(index))
                 throw new IndexOutOfRangeException("List empty or index out of range");
 
-            return RecentItems[index];
+            return recentItems[index];
+        }
+
+        private bool IsOutOfRange(int index)
+        {
+            return recentItems.Count < index || recentItems.Count == 0;
         }
     }
 }
