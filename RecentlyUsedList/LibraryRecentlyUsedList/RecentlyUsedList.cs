@@ -5,6 +5,8 @@ namespace LibraryRecentlyUsedList
     {
         private readonly List<string> recentItems;
 
+        public List<string> RecentItems { get { return recentItems; } }
+
         public int NumberOfRecentItems => recentItems.Count;
 
         public RecentlyUsedList()
@@ -14,7 +16,7 @@ namespace LibraryRecentlyUsedList
 
         public void AddRecentItem(string recentItem)
         {
-            recentItems.Add(recentItem);
+            recentItems.Insert(0, recentItem);
         }
     }
 }
