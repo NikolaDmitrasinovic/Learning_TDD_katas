@@ -75,7 +75,7 @@ namespace TestRecentlyUsedList
 
             // Assert
             recentlyUsedList.NumberOfRecentItems.Should().Be(2);
-            recentlyUsedList.RecentItems[0].Should().Be("newer item");
+            recentlyUsedList.ReturnRecentItem(0).Should().Be("newer item");
         }
 
         [Fact]
@@ -91,7 +91,7 @@ namespace TestRecentlyUsedList
 
             // Assert
             recentlyUsedList.NumberOfRecentItems.Should().Be(2);
-            recentlyUsedList.RecentItems[0].Should().Be("first item");
+            recentlyUsedList.ReturnRecentItem(0).Should().Be("first item");
         }
     }
 }
