@@ -21,13 +21,18 @@ namespace LibraryStack
 
         public object Pop()
         {
-            if (items.Count == 0)
-                throw new InvalidOperationException("Can not execute on empty stack");
+            CheckIfEmpty();
 
             object lastElement = items[^1];
             items.RemoveAt(Count - 1);
 
             return lastElement;
+        }
+
+        private void CheckIfEmpty()
+        {
+            if (items.Count == 0)
+                throw new InvalidOperationException("Can not execute on empty stack");
         }
 
         public object Peek()
