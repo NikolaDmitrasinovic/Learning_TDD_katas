@@ -3,18 +3,18 @@ namespace LibraryRecentlyUsedList
 {
     public class RecentlyUsedList
     {
-        private List<string> recentItems;
+        private readonly List<string> recentItems;
 
         public int NumberOfRecentItems => recentItems.Count;
 
         public RecentlyUsedList()
         {
-            recentItems = new List<string>();
+            recentItems = [];
         }
 
-        public void AddRecentItem(string v)
+        public void AddRecentItem(string recentItem)
         {
-            recentItems.Add(v);
+            recentItems.Add(recentItem);
         }
     }
 }
