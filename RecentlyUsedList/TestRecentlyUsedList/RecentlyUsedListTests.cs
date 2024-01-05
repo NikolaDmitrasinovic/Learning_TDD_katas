@@ -26,5 +26,20 @@ namespace TestRecentlyUsedList
             // Assert
             recentlyUsedList.NumberOfRecentItems.Should().Be(1);
         }
+
+        [Fact]
+        public void Should_AddMoreRecentItem_ToTheBeginningOfTheList()
+        {
+            // Arrange
+            var recentlyUsedList = new RecentlyUsedList();
+
+            // Act
+            recentlyUsedList.AddRecentItem("item");
+            recentlyUsedList.AddRecentItem("newer item");
+
+            // Assert
+            recentlyUsedList.NumberOfRecentItems.Should().Be(2);
+            recentlyUsedList.RecentItems[0].Should().Be("newer item");
+        }
     }
 }
