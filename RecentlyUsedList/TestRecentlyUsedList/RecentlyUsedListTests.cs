@@ -34,6 +34,19 @@ namespace TestRecentlyUsedList
         }
 
         [Fact]
+        public void Should_ReturnRecentItem_ForIndexNumberCountingFromZero()
+        {
+            // Arrange
+            var recentlyUsedList = new RecentlyUsedList();
+
+            // Act
+            recentlyUsedList.AddRecentItem("item");
+
+            // Assert
+            recentlyUsedList.ReturnRecentItem(0).Should().Be("item");
+        }
+
+        [Fact]
         public void Should_AddMoreRecentItem_ToTheBeginningOfTheList()
         {
             // Arrange
