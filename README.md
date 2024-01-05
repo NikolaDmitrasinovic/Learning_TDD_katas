@@ -88,7 +88,7 @@ For example:
 - 2 should return 2
 - Smaller than 2 should return an empty list
 ------
-Queue
+QUEUE
 ------
 Implement your own queue (existing .NET implementations are not allowed (list, array, …)).
 
@@ -96,6 +96,15 @@ Implement your own queue (existing .NET implementations are not allowed (list, a
 - Enqueue(object): Adds an element to the queue.
 - Dequeue(): Returns the first element and removes it from the queue.
 - Peek(): Returns the first element without removing it.
+-------------------
+RECENTLY USED LIST
+-------------------
+Develop a recently-used-list class to hold strings uniquely in Last-In-First-Out order.
+
+- A recently-used-list is initially empty.
+- The most recently added item is first, the least recently added item is last.
+- Items in the list are unique, so duplicate insertions are moved rather than added.
+- Items can be looked up by index, which counts from zero.
 ------
 STACK
 ------
