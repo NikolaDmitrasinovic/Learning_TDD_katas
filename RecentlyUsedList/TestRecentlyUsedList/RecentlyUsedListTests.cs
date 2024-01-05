@@ -24,7 +24,7 @@ namespace TestRecentlyUsedList
             recentlyUsedList.AddRecentItem("item1");
 
             // Assert
-            recentlyUsedList.NumberOfRecentItems.Should().Be(0);
+            recentlyUsedList.NumberOfRecentItems.Should().Be(1);
         }
     }
 }
