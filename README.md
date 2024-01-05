@@ -96,6 +96,16 @@ Implement your own queue (existing .NET implementations are not allowed (list, a
 - Enqueue(object): Adds an element to the queue.
 - Dequeue(): Returns the first element and removes it from the queue.
 - Peek(): Returns the first element without removing it.
+------
+STACK
+------
+Implement your own stack (existing .NET implementations are not allowed (list, array, …)
+
+The stack should have the following methods:
+
+- Push(object): Adds an element to the stack.
+- Pop(): Returns the last element and removes it from the stack.
+- Peek(): Returns the last element without removing it.
 ------------------
 STRING CALCULATOR
 ------------------
