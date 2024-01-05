@@ -14,8 +14,7 @@ namespace LibraryRecentlyUsedList
 
         public void AddRecentItem(string recentItem)
         {
-            if (RecentItems.Contains(recentItem))
-                RecentItems.Remove(recentItem);
+            RecentItems.Remove(recentItem);
 
             RecentItems.Insert(0, recentItem);
         }
