@@ -36,6 +36,21 @@ namespace TestStack
         }
 
         [Fact]
+        public void Should_ThrowException_ForPopCallOnEmptyStack()
+        {
+            // Arrange
+            var myStack = new MyStack();
+
+            // Act
+
+            // Assert
+            myStack.Invoking(x => myStack.Pop())
+                .Should()
+                .Throw<InvalidOperationException>()
+                .WithMessage("Can not execute on empty stack");
+        }
+
+        [Fact]
         public void Should_ShowLastElement()
         {
             // Arrange
