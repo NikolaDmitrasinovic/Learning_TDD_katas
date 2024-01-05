@@ -20,6 +20,9 @@
 
         public string ReturnRecentItem(int index)
         {
+            if (RecentItems.Count < index)
+                throw new IndexOutOfRangeException("List empty or index out of range");
+
             return RecentItems[index];
         }
     }
