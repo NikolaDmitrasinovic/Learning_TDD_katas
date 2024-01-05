@@ -47,6 +47,21 @@ namespace TestRecentlyUsedList
         }
 
         [Fact]
+        public void Should_ThrowException_ForIndexOutOfRange()
+        {
+            // Arrange
+            var recentlyUsedList = new RecentlyUsedList();
+
+            // Act
+
+            // Assert
+            recentlyUsedList.Invoking(x => recentlyUsedList.ReturnRecentItem(5))
+                .Should()
+                .Throw<IndexOutOfRangeException>()
+                .WithMessage("List empty or index out of range");
+        }
+
+        [Fact]
         public void Should_AddMoreRecentItem_ToTheBeginningOfTheList()
         {
             // Arrange
