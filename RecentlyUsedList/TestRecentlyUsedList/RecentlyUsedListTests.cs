@@ -55,7 +55,7 @@ namespace TestRecentlyUsedList
 
             // Assert
             recentlyUsedList.NumberOfRecentItems.Should().Be(2);
-            recentlyUsedList.RecentItems[0].Should().Be("second item");
+            recentlyUsedList.RecentItems[0].Should().Be("first item");
         }
     }
 }
