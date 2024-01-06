@@ -3,11 +3,13 @@
     public class RecentlyUsedList
     {
         private readonly List<string> recentItems;
+        private readonly int setNumberOfItems;
         public int NumberOfRecentItems => recentItems.Count;
 
-        public RecentlyUsedList()
+        public RecentlyUsedList(int _setNumberOfItems = 10)
         {
             recentItems = [];
+            setNumberOfItems = _setNumberOfItems;
         }
 
         public void AddRecentItem(string recentItem)
@@ -15,6 +17,11 @@
             recentItems.Remove(recentItem);
 
             recentItems.Insert(0, recentItem);
+
+            if (NumberOfRecentItems > setNumberOfItems)
+            {
+                recentItems.RemoveAt(setNumberOfItems);
+            }
         }
 
         public string ReturnRecentItem(int index)
