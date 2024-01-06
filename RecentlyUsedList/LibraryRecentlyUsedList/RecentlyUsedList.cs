@@ -29,15 +29,15 @@
 
         public string ReturnRecentItem(int index)
         {
-            if (IsOutOfRange(index))
-                throw new IndexOutOfRangeException("List empty or index out of range");
+            CheckIfOutOfRange(index);
 
             return recentItems[index];
         }
 
-        private bool IsOutOfRange(int index)
+        private void CheckIfOutOfRange(int index)
         {
-            return recentItems.Count < index || recentItems.Count == 0;
+            if (recentItems.Count < index || recentItems.Count == 0)
+                throw new IndexOutOfRangeException("List empty or index out of range");
         }
     }
 }
