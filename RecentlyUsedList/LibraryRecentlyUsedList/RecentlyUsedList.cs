@@ -18,10 +18,13 @@
 
             recentItems.Insert(0, recentItem);
 
+            RemoveOldItems();
+        }
+
+        private void RemoveOldItems()
+        {
             if (NumberOfRecentItems > setNumberOfItems)
-            {
                 recentItems.RemoveAt(setNumberOfItems);
-            }
         }
 
         public string ReturnRecentItem(int index)
