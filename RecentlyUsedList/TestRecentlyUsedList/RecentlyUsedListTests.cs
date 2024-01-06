@@ -2,6 +2,14 @@ namespace TestRecentlyUsedList
 {
     public class RecentlyUsedListTests
     {
+        private static void FillList(int numberOfItems, RecentlyUsedList recentlyUsedList)
+        {
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                recentlyUsedList.AddRecentItem("item" + i);
+            }
+        }
+
         [Fact]
         public void Should_BeEmpty_AtInitialisation()
         {
@@ -24,13 +32,23 @@ namespace TestRecentlyUsedList
             var recentlyUsedList = new RecentlyUsedList();
 
             // Act
-            for (int i = 0; i < numberOfItems; i++)
-            {
-                recentlyUsedList.AddRecentItem("item" + i);
-            }            
+            FillList(numberOfItems, recentlyUsedList);
 
             // Assert
             recentlyUsedList.NumberOfRecentItems.Should().Be(numberOfItems);
+        }
+
+        [Fact]
+        public void Should_KeepUpTo10Items_ForNoNumberPassedToCtor()
+        {
+            // Arrange
+            var recentlyUsedList = new RecentlyUsedList();
+
+            // Act
+            FillList(15, recentlyUsedList);
+
+            // Assert
+            recentlyUsedList.NumberOfRecentItems.Should().Be(10);
         }
 
         [Fact]
