@@ -51,17 +51,19 @@ namespace TestRecentlyUsedList
             recentlyUsedList.NumberOfRecentItems.Should().Be(10);
         }
 
-        [Fact]
-        public void Should_ReturnRecentItem_ForIndexNumberCountingFromZero()
+        [Theory]
+        [InlineData(0, "item7")]
+        [InlineData(7, "item0")]
+        public void Should_ReturnRecentItem_ForIndexNumberCountingFromZero(int index, string item)
         {
             // Arrange
             var recentlyUsedList = new RecentlyUsedList();
 
             // Act
-            recentlyUsedList.AddRecentItem("item");
+            FillList(8, recentlyUsedList);
 
             // Assert
-            recentlyUsedList.ReturnRecentItem(0).Should().Be("item");
+            recentlyUsedList.ReturnRecentItem(index).Should().Be(item);
         }
 
         [Theory]
