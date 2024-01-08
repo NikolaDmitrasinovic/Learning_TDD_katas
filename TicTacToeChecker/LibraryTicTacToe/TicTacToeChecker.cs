@@ -11,7 +11,7 @@ namespace LibraryTicTacToe
             if (IsVictroyRow(game, 2) || IsVictroyColumn(game, 2) || IsVictroyCrossColumn(game, 2))
                 return 2;
 
-            return -1;
+            return IsDraw(game) ? 0 : -1;
         }
 
         private static bool IsVictroyRow(int[,] game, int player)
@@ -39,6 +39,16 @@ namespace LibraryTicTacToe
 
             if (game[0, 2] == player && game[1, 1] == player && game[2, 0] == player)
                 return true;
+
+            return false;
+        }
+
+        private static bool IsDraw(int[,] game)
+        {
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    if (game[i, j] != 0)
+                        return true;
 
             return false;
         }
