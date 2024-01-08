@@ -20,13 +20,15 @@ namespace TestTicTacToe
             gameResult.Should().Be(-1);
         }
 
-        [Fact]
-        public void Should_ReturnOne_ForXVictory()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Should_ReturnVictor_ForFirstRowVictory(int victor)
         {
             // Arrange
             var game = new int[3, 3]
             {
-                { 1, 1, 1 },
+                { victor, victor, victor},
                 { 0, 2, 0 },
                 { 0, 0, 2 }
             };
@@ -35,7 +37,7 @@ namespace TestTicTacToe
             var gameResult = TicTacToeChecker.Check(game);
 
             // Assert
-            gameResult.Should().Be(1);
+            gameResult.Should().Be(victor);
         }
     }
 }
