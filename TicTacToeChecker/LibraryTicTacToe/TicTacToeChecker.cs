@@ -1,5 +1,4 @@
-﻿
-namespace LibraryTicTacToe
+﻿namespace LibraryTicTacToe
 {
     public class TicTacToeChecker
     {
@@ -45,7 +44,6 @@ namespace LibraryTicTacToe
 
         private static bool IsOngoingGame(int[,] game)
         {
-
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
                     if (game[i, j] == 0)
