@@ -40,40 +40,44 @@ namespace TestTicTacToe
             gameResult.Should().Be(victor);
         }
 
-        [Fact]
-        public void Should_ReturnOne_ForXSecondRowVicotry()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Should_ReturnVictor_ForSecondRowVictory(int victor)
         {
             // Arrange
             var game = new int[3, 3]
             {
-                { 0, 2, 2 },
-                { 1, 1, 1 },
-                { 0, 0, 0 }
+                { 0, 0, 2 },
+                { victor, victor, victor},
+                { 0, 2, 0 }                
             };
 
             // Act
             var gameResult = TicTacToeChecker.Check(game);
 
             // Assert
-            gameResult.Should().Be(1);
+            gameResult.Should().Be(victor);
         }
 
-        [Fact]
-        public void Should_ReturnOne_ForXThirdRowVicotry()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Should_ReturnVictor_ForThirdRowVictory(int victor)
         {
             // Arrange
             var game = new int[3, 3]
             {
-                { 0, 2, 2 },
-                { 0, 0, 0 },
-                { 1, 1, 1 }
+                { 0, 2, 0 },
+                { 0, 0, 2 },
+                { victor, victor, victor}                
             };
 
             // Act
             var gameResult = TicTacToeChecker.Check(game);
 
             // Assert
-            gameResult.Should().Be(1);
+            gameResult.Should().Be(victor);
         }
     }
 }
