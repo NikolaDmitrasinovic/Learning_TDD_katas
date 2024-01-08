@@ -39,5 +39,23 @@ namespace TestTicTacToe
             // Assert
             gameResult.Should().Be(victor);
         }
+
+        [Fact]
+        public void Should_ReturnOne_ForXSecondRowVicotry()
+        {
+            // Arrange
+            var game = new int[3, 3]
+            {
+                { 0, 2, 2 },
+                { 1, 1, 1 },
+                { 0, 0, 0 }
+            };
+
+            // Act
+            var gameResult = TicTacToeChecker.Check(game);
+
+            // Assert
+            gameResult.Should().Be(1);
+        }
     }
 }
