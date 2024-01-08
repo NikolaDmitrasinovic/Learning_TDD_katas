@@ -59,5 +59,25 @@ namespace TestTicTacToe
             // Assert
             gameResult.Should().Be(victor);
         }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Should_ReturnVictor_ForCrossColumn(int victor)
+        {
+            // Arrange
+            var game = new int[3, 3]
+            {
+                { 2, 0, 1},
+                { 0, victor, 0 },
+                { 1, 0, 2 }
+            };
+
+            // Act
+            var gameResult = TicTacToeChecker.Check(game);
+
+            // Assert
+            gameResult.Should().Be(victor);
+        }
     }
 }
