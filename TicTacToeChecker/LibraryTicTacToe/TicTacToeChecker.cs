@@ -5,17 +5,17 @@ namespace LibraryTicTacToe
     {
         public static int Check(int[,] game)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                if (game[i, 0] == 1 && game[i, 1] == 1 && game[i, 2] == 1)
-                    return 1;
-            }
+            int playerX = CheckVictory(game, 1);
+            int playerO = CheckVictory(game, 2);
 
+            return playerX == 1 ? playerX : playerO;
+        }
+
+        private static int CheckVictory(int[,] game, int player)
+        {
             for (int i = 0; i < 3; i++)
-            {
-                if (game[i, 0] == 2 && game[i, 1] == 2 && game[i, 2] == 2)
-                    return 2;
-            }
+                if (game[i, 0] == player && game[i, 1] == player && game[i, 2] == player)
+                    return player;
 
             return -1;
         }
