@@ -83,15 +83,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestStack", "Stack\TestStac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RecentlyUsedList", "RecentlyUsedList", "{64742969-0EAD-491A-A1F0-440E7F22EA3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRecentlyUsedList", "RecentlyUsedList\TestRecentlyUsedList\TestRecentlyUsedList.csproj", "{D3EC05C1-71D3-4AAC-BD55-551CF010AE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRecentlyUsedList", "RecentlyUsedList\TestRecentlyUsedList\TestRecentlyUsedList.csproj", "{D3EC05C1-71D3-4AAC-BD55-551CF010AE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryRecentlyUsedList", "RecentlyUsedList\LibraryRecentlyUsedList\LibraryRecentlyUsedList.csproj", "{8E81B3CD-3841-4047-878C-3C35ECE1E619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryRecentlyUsedList", "RecentlyUsedList\LibraryRecentlyUsedList\LibraryRecentlyUsedList.csproj", "{8E81B3CD-3841-4047-878C-3C35ECE1E619}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TicTacToeChecker", "TicTacToeChecker", "{5BC23912-BAC6-45BE-93E6-B813603167FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTicTacToe", "TicTacToeChecker\TestTicTacToe\TestTicTacToe.csproj", "{4DB578C4-35EC-44ED-AF82-4CF03A8FD1AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTicTacToe", "TicTacToeChecker\TestTicTacToe\TestTicTacToe.csproj", "{4DB578C4-35EC-44ED-AF82-4CF03A8FD1AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryTicTacToe", "TicTacToeChecker\LibraryTicTacToe\LibraryTicTacToe.csproj", "{26E9659D-D2DF-4203-A717-88F6D7B0F5D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryTicTacToe", "TicTacToeChecker\LibraryTicTacToe\LibraryTicTacToe.csproj", "{26E9659D-D2DF-4203-A717-88F6D7B0F5D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tree", "Tree", "{EDB218E0-6E29-42B3-947F-B03811825F71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryTree", "Tree\LibraryTree\LibraryTree.csproj", "{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTree", "Tree\TestTree\TestTree.csproj", "{5B38B511-4CE8-4A9B-BB68-23470CBA05EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +225,14 @@ Global
 		{26E9659D-D2DF-4203-A717-88F6D7B0F5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E9659D-D2DF-4203-A717-88F6D7B0F5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E9659D-D2DF-4203-A717-88F6D7B0F5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B38B511-4CE8-4A9B-BB68-23470CBA05EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B38B511-4CE8-4A9B-BB68-23470CBA05EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B38B511-4CE8-4A9B-BB68-23470CBA05EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B38B511-4CE8-4A9B-BB68-23470CBA05EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -254,6 +268,8 @@ Global
 		{8E81B3CD-3841-4047-878C-3C35ECE1E619} = {64742969-0EAD-491A-A1F0-440E7F22EA3C}
 		{4DB578C4-35EC-44ED-AF82-4CF03A8FD1AA} = {5BC23912-BAC6-45BE-93E6-B813603167FB}
 		{26E9659D-D2DF-4203-A717-88F6D7B0F5D4} = {5BC23912-BAC6-45BE-93E6-B813603167FB}
+		{9DC80C0D-5E1E-46E5-8458-4F16C7F6EBE7} = {EDB218E0-6E29-42B3-947F-B03811825F71}
+		{5B38B511-4CE8-4A9B-BB68-23470CBA05EB} = {EDB218E0-6E29-42B3-947F-B03811825F71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D125AAD9-92BC-4DFF-91F1-3AAC78B58B06}
