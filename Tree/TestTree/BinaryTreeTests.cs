@@ -30,6 +30,20 @@ namespace TestTree
         }
 
         [Fact]
+        public void Insert_NumberGreaterThanRootValue_ShouldSetNodeRight()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+
+            // Act
+            tree.Insert(10);
+            tree.Insert(15);
+
+            // Assert
+            tree.Root.Right.Value.Should().Be(15);
+        }
+
+        [Fact]
         public void Contains_ReturnsFalseForNonexistentValue()
         {
             // Arrange
