@@ -39,5 +39,15 @@
             else
                 return ContainsRecursive(node.Right, value);
         }
+
+        public static void ReturnTree(TreeNode node, List<int> sortedTree)
+        {
+            if (node != null)
+            {
+                ReturnTree(node.Left, sortedTree);
+                sortedTree.Add(node.Value);
+                ReturnTree(node.Right, sortedTree);
+            }
+        }
     }
 }
