@@ -165,11 +165,11 @@ Assume that the board comes in the form of a 3×3 array, where the value is 0 if
 We want our function to return -1 if the board is not solved yet, 1 if X won, 2 if O won, or 0 if it’s a cat’s game (i.e. a draw).
 
 You may assume that the board passed in is valid in the context of a game of Tic-Tac-Toe.
+
 -----
 TREE
 -----
 Implement a binary tree search algorithm.
-
 -------------
 WORD WRAPPER
 -------------
