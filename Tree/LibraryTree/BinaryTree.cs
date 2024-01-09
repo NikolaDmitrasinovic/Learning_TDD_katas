@@ -24,10 +24,20 @@
 
         public bool Contains(int value)
         {
-            if (Root == null)
+            return ContainsRecursive(Root, value);
+        }
+
+        private bool ContainsRecursive(TreeNode node, int value)
+        {
+            if (node == null)
                 return false;
 
-            return Root.Value == value;
+            if (value == node.Value)
+                return true;
+            else if (value < node.Value)
+                return ContainsRecursive(node.Left, value);
+            else
+                return ContainsRecursive(node.Right, value);
         }
     }
 }
