@@ -2,11 +2,11 @@
 {
     public class BinaryTree
     {
-        public TreeNode? Node { get; private set; }
+        public TreeNode? Root { get; private set; }
 
         public void Insert(int value)
         {
-            Node = InsertRecursive(Node, value);
+            Root = InsertRecursive(Root, value);
         }
 
         private TreeNode InsertRecursive(TreeNode node, int value)
@@ -22,10 +22,10 @@
 
         public bool Contains(int value)
         {
-            if (Node == null)
+            if (Root == null)
                 return false;
 
-            return Node.Value == value;
+            return Root.Value == value;
         }
     }
 }

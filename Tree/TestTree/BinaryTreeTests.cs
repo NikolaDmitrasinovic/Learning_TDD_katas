@@ -26,7 +26,7 @@ namespace TestTree
             tree.Insert(5);
 
             // Assert
-            tree.Node.Left.Value.Should().Be(5);
+            tree.Root.Left.Value.Should().Be(5);
         }
 
         [Fact]
