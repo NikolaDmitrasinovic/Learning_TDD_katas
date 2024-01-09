@@ -6,7 +6,18 @@
 
         public void Insert(int value)
         {
-            Node = new TreeNode(value);
+            Node = InsertRecursive(Node, value);
+        }
+
+        private TreeNode InsertRecursive(TreeNode node, int value)
+        {
+            if (node == null)
+                return new TreeNode(value);
+
+            if (value < node.Value)
+                node.Left = InsertRecursive(node.Left, value);
+
+            return node;
         }
 
         public bool Contains(int value)
