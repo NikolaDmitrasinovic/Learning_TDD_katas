@@ -85,5 +85,25 @@ namespace TestTree
             // Assert
             tree.Contains(value).Should().BeTrue();
         }
+
+        [Fact]
+        public void ReturnTree_ReturnsSortedList()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+            var unsortedList = new[] { 16, 4, 8, 6, 12 };
+            var sortedList = new List<int>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                tree.Insert(unsortedList[i]);
+            }
+
+            // Act
+            BinaryTree.ReturnTree(tree.Root, sortedList);
+
+            // Assert
+            sortedList.Should().BeInAscendingOrder();
+        }
     }
 }
