@@ -9,7 +9,7 @@
             Root = InsertRecursive(Root, value);
         }
 
-        private TreeNode InsertRecursive(TreeNode node, int value)
+        private static TreeNode InsertRecursive(TreeNode node, int value)
         {
             if (node == null)
                 return new TreeNode(value);
@@ -27,7 +27,7 @@
             return ContainsRecursive(Root, value);
         }
 
-        private bool ContainsRecursive(TreeNode node, int value)
+        private static bool ContainsRecursive(TreeNode node, int value)
         {
             if (node == null)
                 return false;
