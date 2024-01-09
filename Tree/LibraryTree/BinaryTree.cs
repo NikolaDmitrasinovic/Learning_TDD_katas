@@ -16,6 +16,8 @@
 
             if (value < node.Value)
                 node.Left = InsertRecursive(node.Left, value);
+            else if (value > node.Value)
+                node.Right = InsertRecursive(node.Right, value);
 
             return node;
         }
