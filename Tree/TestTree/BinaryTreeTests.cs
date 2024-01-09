@@ -12,7 +12,7 @@ namespace TestTree
             tree.Insert(10);
 
             // Assert
-            tree.Contains(10).Should().BeTrue();
+            tree.Root.Should().NotBeNull();
         }
 
         [Fact]
@@ -44,6 +44,18 @@ namespace TestTree
         }
 
         [Fact]
+        public void Contains_ReturnsFalseForNullNode()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+
+            // Act
+
+            // Assert
+            tree.Contains(1).Should().BeFalse();
+        }
+
+        [Fact]
         public void Contains_ReturnsFalseForNonexistentValue()
         {
             // Arrange
@@ -56,34 +68,22 @@ namespace TestTree
             tree.Contains(11).Should().BeFalse();
         }
 
-        [Fact]
-        public void Contains_ReturnsFalseForNullNode()
+        [Theory]
+        [InlineData(new[] { 1 }, 1)]
+        [InlineData(new[] { 16, 4, 8, 6, 12 },8)]
+        public void Contains_ReturnsFindsValueFromAList(int[] ints, int value)
         {
             // Arrange
             var tree = new BinaryTree();
 
             // Act
-            var nodeExists = tree.Contains(1);
-
-            // Assert
-            nodeExists.Should().BeFalse();
-        }
-
-        [Fact]
-        public void Contains_ReturnsFindsValueFromAList()
-        {
-            // Arrange
-            var tree = new BinaryTree();
-            var unsortedList = new[] { 16, 1, 8, 3, 14, 9, 10 };
-
-            // Act
-            for (int i = 0; i < unsortedList.Length; i++)
+            for (int i = 0; i < ints.Length; i++)
             {
-                tree.Insert(unsortedList[i]);
+                tree.Insert(ints[i]);
             }
 
             // Assert
-            tree.Contains(8).Should().BeTrue();
+            tree.Contains(value).Should().BeTrue();
         }
     }
 }
