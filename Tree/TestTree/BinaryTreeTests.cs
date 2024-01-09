@@ -27,5 +27,18 @@ namespace TestTree
             // Assert
             tree.Contains(11).Should().BeFalse();
         }
+
+        [Fact]
+        public void Contains_ReturnsFalseForNullNode()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+
+            // Act
+            var nodeExists = tree.Contains(1);
+
+            // Assert
+            nodeExists.Should().BeFalse();
+        }
     }
 }
