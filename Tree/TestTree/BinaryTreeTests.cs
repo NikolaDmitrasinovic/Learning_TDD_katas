@@ -68,5 +68,22 @@ namespace TestTree
             // Assert
             nodeExists.Should().BeFalse();
         }
+
+        [Fact]
+        public void Contains_ReturnsFindsValueFromAList()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+            var unsortedList = new[] { 16, 1, 8, 3, 14, 9, 10 };
+
+            // Act
+            for (int i = 0; i < unsortedList.Length; i++)
+            {
+                tree.Insert(unsortedList[i]);
+            }
+
+            // Assert
+            tree.Contains(8).Should().BeTrue();
+        }
     }
 }
