@@ -11,6 +11,9 @@
 
         public bool Contains(int value)
         {
+            if (value != Node.Value)
+                return false;
+
             return true;
         }
     }
