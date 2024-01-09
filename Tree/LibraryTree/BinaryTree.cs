@@ -2,7 +2,7 @@
 {
     public class BinaryTree
     {
-        public TreeNode? Node { get; set; }
+        public TreeNode? Node { get; private set; }
 
         public void Insert(int value)
         {
