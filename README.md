@@ -170,6 +170,7 @@ You may assume that the board passed in is valid in the context of a game of Tic
 TREE
 -----
 Implement a binary tree search algorithm.
+
 -------------
 WORD WRAPPER
 -------------
