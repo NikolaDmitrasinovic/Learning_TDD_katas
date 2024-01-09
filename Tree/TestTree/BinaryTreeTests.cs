@@ -16,6 +16,20 @@ namespace TestTree
         }
 
         [Fact]
+        public void Insert_NumberSmallerThanRootValue_ShouldSetNodeLeft()
+        {
+            // Arrange
+            var tree = new BinaryTree();
+
+            // Act
+            tree.Insert(10);
+            tree.Insert(5);
+
+            // Assert
+            tree.Node.Left.Value.Should().Be(5);
+        }
+
+        [Fact]
         public void Contains_ReturnsFalseForNonexistentValue()
         {
             // Arrange
