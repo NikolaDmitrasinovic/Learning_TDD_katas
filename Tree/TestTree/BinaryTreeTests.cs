@@ -2,11 +2,25 @@ namespace TestTree
 {
     public class BinaryTreeTests
     {
+        private readonly BinaryTree tree;
+
+        public BinaryTreeTests()
+        {
+            tree = new BinaryTree();
+        }
+
+        private static void PopulateTree(BinaryTree tree, int[] unsortedList)
+        {
+            for (int i = 0; i < unsortedList.Length; i++)
+            {
+                tree.Insert(unsortedList[i]);
+            }
+        }
+
         [Fact]
         public void Insert_AddsNodeToTree()
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
             tree.Insert(10);
@@ -19,7 +33,6 @@ namespace TestTree
         public void Insert_NumberSmallerThanRootValue_ShouldSetNodeLeft()
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
             tree.Insert(10);
@@ -33,7 +46,6 @@ namespace TestTree
         public void Insert_NumberGreaterThanRootValue_ShouldSetNodeRight()
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
             tree.Insert(10);
@@ -47,7 +59,6 @@ namespace TestTree
         public void Contains_ReturnsFalseForNullNode()
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
 
@@ -59,7 +70,6 @@ namespace TestTree
         public void Contains_ReturnsFalseForNonexistentValue()
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
             tree.Insert(10);
@@ -74,13 +84,9 @@ namespace TestTree
         public void Contains_ReturnsFindsValueFromAList(int[] ints, int value)
         {
             // Arrange
-            var tree = new BinaryTree();
 
             // Act
-            for (int i = 0; i < ints.Length; i++)
-            {
-                tree.Insert(ints[i]);
-            }
+            PopulateTree(tree, ints);
 
             // Assert
             tree.Contains(value).Should().BeTrue();
@@ -90,14 +96,10 @@ namespace TestTree
         public void ReturnTree_ReturnsSortedList()
         {
             // Arrange
-            var tree = new BinaryTree();
             var unsortedList = new[] { 16, 4, 8, 6, 12 };
             var sortedList = new List<int>();
 
-            for (int i = 0; i < 5; i++)
-            {
-                tree.Insert(unsortedList[i]);
-            }
+            PopulateTree(tree, unsortedList);
 
             // Act
             BinaryTree.ReturnTree(tree.Root, sortedList);
