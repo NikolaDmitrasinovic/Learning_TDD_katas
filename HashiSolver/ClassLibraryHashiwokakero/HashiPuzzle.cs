@@ -9,6 +9,8 @@ namespace ClassLibraryHashiwokakero
         public void AddBridge(int v1, int v2)
         {
             BridgeList.Add(new HashiBridge(IsleList[v1], IsleList[v2]));
+            IsleList[v1].Connect(IsleList[v2]);
+            IsleList[v2].Connect(IsleList[v1]);
         }
 
         public void AddIsle(int value)
