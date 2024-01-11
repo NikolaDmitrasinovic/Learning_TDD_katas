@@ -28,7 +28,6 @@ namespace TestHashiwokakero
             puzzle.AddBridge(0, 2);
             puzzle.AddBridge(1, 3);
             puzzle.AddBridge(2, 3);
-            puzzle.AddBridge(2, 3);
 
             // Act
             var isValid = HashiValidator.Validate(puzzle);
