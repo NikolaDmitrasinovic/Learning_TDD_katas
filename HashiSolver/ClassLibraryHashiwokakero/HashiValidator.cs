@@ -5,7 +5,7 @@ namespace ClassLibraryHashiwokakero
     {
         public static bool Validate(HashiPuzzle puzzle)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
