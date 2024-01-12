@@ -13,9 +13,12 @@ namespace ClassLibraryHashiwokakero
             Isles[v2].Connect(Isles[v1]);
         }
 
-        public void AddIsle(int value)
+        public void AddIsle(int value, int x, int y)
         {
-            Isles.Add(new HashiIsle(value));
+            if (Isles.SingleOrDefault(i => i.X.Equals(x) && i.Y.Equals(y)) == null)
+                Isles.Add(new HashiIsle(value, x, y));
+            else
+                throw new InvalidDataException("Isle already in the list");
         }
     }
 }
