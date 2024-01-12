@@ -19,7 +19,7 @@
 
             // Assert
             puzzle.Isles.Count.Should().Be(4);
-            puzzle.BridgeList.Count.Should().Be(3);
+            puzzle.Bridges.Count.Should().Be(3);
         }
 
         [Fact]
