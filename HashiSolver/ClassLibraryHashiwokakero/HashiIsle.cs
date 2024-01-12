@@ -5,8 +5,8 @@ namespace ClassLibraryHashiwokakero
     {
         public int Value { get; } = value;
         public List<HashiIsle> ConnectedIsles { get; private set; } = [];
-        public object X { get; } = x;
-        public object Y { get; } = y;
+        public int X { get; } = x;
+        public int Y { get; } = y;
 
         public HashiBridge Connect(HashiIsle isle)
         {
