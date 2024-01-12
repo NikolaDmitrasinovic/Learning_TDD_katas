@@ -6,8 +6,8 @@
         public static void Should_InitializeBridgeCorrectly()
         {
             // Arrange
-            var isle1 = new HashiIsle(1);
-            var isle2 = new HashiIsle(2);
+            var isle1 = new HashiIsle(1, 1, 1);
+            var isle2 = new HashiIsle(2, 1, 1);
 
             // Act
             var bridge = new HashiBridge(isle1, isle2);
