@@ -47,24 +47,13 @@ namespace TestHashiwokakero
             puzzle.AddIsle(1, 2, 1);
             puzzle.AddIsle(1, 1, 2);
             puzzle.AddBridge(0, 2);
-            puzzle.AddBridge(1, 3);
+            puzzle.AddBridge(1, 2);
 
             // Act
             var isValid = HashiValidator.Validate(puzzle);
 
             // Assert
             isValid.Should().BeFalse();
-        }
-
-        [Fact(Skip = "future test")]
-        public void Validate_ReturnsFalse_ForInvalidSolution()
-        {
-            // Arrange
-
-            // Act
-
-            // Assert
-
         }
     }
 }
