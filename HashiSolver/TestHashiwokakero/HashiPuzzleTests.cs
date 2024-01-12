@@ -18,7 +18,7 @@
             puzzle.AddBridge(2, 3);
 
             // Assert
-            puzzle.IsleList.Count.Should().Be(4);
+            puzzle.Isles.Count.Should().Be(4);
             puzzle.BridgeList.Count.Should().Be(3);
         }
 
@@ -34,8 +34,8 @@
             puzzle.AddBridge(0, 1);
 
             // Assert
-            puzzle.IsleList[0].ConnectedIsles.Count.Should().Be(1);
-            puzzle.IsleList[1].ConnectedIsles.Count.Should().Be(1);
+            puzzle.Isles[0].ConnectedIsles.Count.Should().Be(1);
+            puzzle.Isles[1].ConnectedIsles.Count.Should().Be(1);
         }
     }
 }
