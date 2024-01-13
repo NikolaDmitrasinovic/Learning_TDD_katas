@@ -19,6 +19,9 @@ namespace ClassLibraryHashiwokakero
         {
             foreach (var bridge1 in puzzle.Bridges)
             {
+                if (bridge1.Isle1.X != bridge1.Isle2.X && bridge1.Isle1.Y != bridge1.Isle2.Y)
+                    return false;
+
                 foreach (var bridge2 in puzzle.Bridges)
                 {
                     if (!bridge1.Equals(bridge2))
