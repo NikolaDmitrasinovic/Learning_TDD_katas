@@ -3,8 +3,8 @@ namespace ClassLibraryHashiwokakero
 {
     public class HashiPuzzle
     {
-        public List<HashiIsle> Isles { get; set; } = new List<HashiIsle>();
-        public List<HashiBridge> Bridges { get; set; } = new List<HashiBridge>();
+        public List<HashiIsle> Isles { get; set; } = [];
+        public List<HashiBridge> Bridges { get; set; } = [];
 
         public void AddBridge(int v1, int v2)
         {
