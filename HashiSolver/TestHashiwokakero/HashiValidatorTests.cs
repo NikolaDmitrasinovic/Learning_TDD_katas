@@ -41,7 +41,7 @@ namespace TestHashiwokakero
         }
 
         [Fact]
-        public void Validate_IfBridgesAreCrossing()
+        public void Validate_IfBridgesCross()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
