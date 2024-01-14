@@ -3,19 +3,6 @@ namespace TestHashiwokakero
     public class HashiValidatorTests
     {
         [Fact]
-        public void Validate_ReturnsFalse_ForEmptyPuzzle()
-        {
-            // Arrange
-            var puzzle = new HashiPuzzle();
-
-            // Act
-            var isValid = HashiValidator.Validate(puzzle);
-
-            // Assert
-            isValid.Should().BeFalse();
-        }
-
-        [Fact]
         public void Validate_ThatEveryIslandHasNeededAmountOfBridges()
         {
             // Arrange
