@@ -43,7 +43,16 @@ FizzBuzz
 Write a program ( using TDD ) that prints the numbers from 1 to 100. But for multiples of three print "Fizz" and for multiples of five print "Buzz". For numbers which are multiples of both print "FizzBuzz".
 
 Sample output: 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 ... etc
+-------------
+HASHI SOLVER
+-------------
+Write a program that evaluates a provided solution for the game Hashi. The program must check the following conditions:
 
+* Every island has the needed amount of bridges.
+* Every bridge is connected to two islands.
+* No bridge is crossing with another one.
+
+A description of the game and the rules can be found on [Wikipedia](https://en.wikipedia.org/wiki/Hashiwokakero).
 --------------------
 HUMAN READABLE TIME
 --------------------
