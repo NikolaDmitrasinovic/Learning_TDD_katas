@@ -5,7 +5,7 @@ namespace ClassLibraryHashiwokakero
     {
         public static bool Validate(HashiPuzzle puzzle)
         {
-            if (!IsBridgeCovered(puzzle))
+            if (!HasNeededAmountOfBrigdes(puzzle))
                 return false;
             else if (!IsCorrectlyBridged(puzzle))
                 return false;
@@ -54,7 +54,7 @@ namespace ClassLibraryHashiwokakero
             return false;
         }
 
-        private static bool IsBridgeCovered(HashiPuzzle puzzle)
+        private static bool HasNeededAmountOfBrigdes(HashiPuzzle puzzle)
         {
             foreach (var isle in puzzle.Isles)
                 if (isle.ConnectedIsles.Count != isle.Value)
