@@ -3,7 +3,7 @@ namespace TestHashiwokakero
     public class HashiValidatorTests
     {
         [Fact]
-        public void Validate_ThatEveryIslandHasNeededAmountOfBridges()
+        public void Validate_IfEveryIslandHasNeededAmountOfBridges()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
@@ -24,7 +24,7 @@ namespace TestHashiwokakero
         }
 
         [Fact]
-        public void Validate_ReturnFalse_IfBridgesAreCrossing()
+        public void Validate_IfBridgesAreCrossing()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
@@ -44,7 +44,7 @@ namespace TestHashiwokakero
         }
 
         [Fact]
-        public void Validate_ReturnFalse_IfBridgesAreNotOrthagonal()
+        public void Validate_IfAllBridgesAreNotOrthagonal()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
