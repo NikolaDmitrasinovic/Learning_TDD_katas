@@ -9,13 +9,13 @@ namespace ClassLibraryHashiwokakero
                 return false;
             else if (HasDiagonalBridges(puzzle))
                 return false;
-            else if (!IsCorrectlyBridged(puzzle))
+            else if (HasBridgesCross(puzzle))
                 return false;
 
             return true;
         }
 
-        private static bool IsCorrectlyBridged(HashiPuzzle puzzle)
+        private static bool HasBridgesCross(HashiPuzzle puzzle)
         {
             foreach (var bridge1 in puzzle.Bridges)
             {
@@ -25,11 +25,11 @@ namespace ClassLibraryHashiwokakero
                         continue;
 
                     if (AreCrossing(bridge1, bridge2))
-                        return false;
+                        return true;
                 }
             }
 
-            return true;
+            return false;
         }
 
         private static bool HasDiagonalBridges(HashiPuzzle puzzle)
