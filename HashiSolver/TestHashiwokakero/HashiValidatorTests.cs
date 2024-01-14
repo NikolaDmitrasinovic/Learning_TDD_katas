@@ -24,7 +24,7 @@ namespace TestHashiwokakero
         }
 
         [Fact]
-        public void Validate_IfAllBridgesAreNotOrthagonal()
+        public void Validate_IfThereAreDiagonalBridges()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
