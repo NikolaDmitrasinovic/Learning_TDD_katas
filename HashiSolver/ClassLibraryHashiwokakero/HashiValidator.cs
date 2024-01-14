@@ -5,9 +5,7 @@ namespace ClassLibraryHashiwokakero
     {
         public static bool Validate(HashiPuzzle puzzle)
         {
-            if (!IsReady(puzzle))
-                return false;
-            else if (!IsBridgeCovered(puzzle))
+            if (!IsBridgeCovered(puzzle))
                 return false;
             else if (!IsCorrectlyBridged(puzzle))
                 return false;
@@ -54,14 +52,6 @@ namespace ClassLibraryHashiwokakero
             }
 
             return false;
-        }
-
-        private static bool IsReady(HashiPuzzle puzzle)
-        {
-            if (puzzle.Isles.Count == 0)
-                return false;
-
-            return true;
         }
 
         private static bool IsBridgeCovered(HashiPuzzle puzzle)
