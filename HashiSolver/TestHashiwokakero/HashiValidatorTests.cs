@@ -24,6 +24,23 @@ namespace TestHashiwokakero
         }
 
         [Fact]
+        public void Validate_IfAllBridgesAreNotOrthagonal()
+        {
+            // Arrange
+            var puzzle = new HashiPuzzle();
+
+            puzzle.AddIsle(1, 0, 1);
+            puzzle.AddIsle(1, 1, 0);
+            puzzle.AddBridge(0, 1);
+
+            // Act
+            var isValid = HashiValidator.Validate(puzzle);
+
+            // Assert
+            isValid.Should().BeFalse();
+        }
+
+        [Fact]
         public void Validate_IfBridgesAreCrossing()
         {
             // Arrange
@@ -41,23 +58,6 @@ namespace TestHashiwokakero
 
             // Assert
             isValid.Should().BeFalse();
-        }
-
-        [Fact]
-        public void Validate_IfAllBridgesAreNotOrthagonal()
-        {
-            // Arrange
-            var puzzle = new HashiPuzzle();
-
-            puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(1, 1, 0);
-            puzzle.AddBridge(0, 1);
-
-            // Act
-            var isValid = HashiValidator.Validate(puzzle);
-
-            // Assert
-            isValid.Should().BeFalse();
-        }
+        }        
     }
 }
