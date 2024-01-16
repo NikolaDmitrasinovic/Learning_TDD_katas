@@ -1,5 +1,4 @@
-﻿
-namespace ClassLibraryHashiwokakero
+﻿namespace ClassLibraryHashiwokakero
 {
     public class HashiIsle(int value, int x, int y)
     {

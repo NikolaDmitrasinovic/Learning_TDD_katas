@@ -1,6 +1,4 @@
-﻿
-
-namespace ClassLibraryHashiwokakero
+﻿namespace ClassLibraryHashiwokakero
 {
     public class HashiValidator
     {
