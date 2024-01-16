@@ -1,5 +1,6 @@
 namespace TestHashiwokakero
 {
+
     public class HashiValidatorTests
     {
         [Fact]
@@ -90,6 +91,25 @@ namespace TestHashiwokakero
             puzzle.AddIsle(2, 2, 1);
             puzzle.AddBridge(0, 2);
             puzzle.AddBridge(1, 2);
+
+            // Act
+            var isValid = HashiValidator.Validate(puzzle);
+
+            // Assert
+            isValid.Should().BeFalse();
+        }
+
+        [Fact]
+        public void Validate_IfBridgesAreCrossingIslesButAreInReverse() // not all cases tested!!!
+        {
+            // Arrange
+            var puzzle = new HashiPuzzle();
+
+            puzzle.AddIsle(1, 0, 1);
+            puzzle.AddIsle(1, 1, 1);
+            puzzle.AddIsle(2, 2, 1);
+            puzzle.AddBridge(2, 0);
+            puzzle.AddBridge(2, 1);
 
             // Act
             var isValid = HashiValidator.Validate(puzzle);
