@@ -3,7 +3,7 @@
     public class HashiIsleTests
     {
         [Fact]
-        public static void Instantiate_IsleCorrectly()
+        public static void Initialize_IsleCorrectly()
         {
             // Arrange
             var isle = new HashiIsle(2, 1, 1);
