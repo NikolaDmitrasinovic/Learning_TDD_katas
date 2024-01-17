@@ -14,10 +14,15 @@
 
         public void AddIsle(int value, int x, int y)
         {
-            if (Isles.SingleOrDefault(i => i.X.Equals(x) && i.Y.Equals(y)) == null)
-                Isles.Add(new HashiIsle(value, x, y));
-            else
+            if (IsInIsles(x, y))
                 throw new InvalidDataException("Isle already in the list");
+
+            Isles.Add(new HashiIsle(value, x, y));
+        }
+
+        private bool IsInIsles(int x, int y)
+        {
+            return Isles.SingleOrDefault(i => i.X.Equals(x) && i.Y.Equals(y)) != null;
         }
     }
 }
