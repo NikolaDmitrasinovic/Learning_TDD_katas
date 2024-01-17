@@ -15,11 +15,13 @@
                 IsleTo = isle1.Y > isle2.Y ? isle1 : isle2;
             }
             else if (isle1.Y == isle2.Y)
-            {                
+            {
                 Orientation = BridgeOrientation.Vertical;
                 IsleFrom = isle1.X < isle2.X ? isle1 : isle2;
                 IsleTo = isle1.X > isle2.X ? isle1 : isle2;
-            }        
+            }
+            else
+                throw new InvalidOperationException("Only orthagonal bridges allowed.");
         }
     }
 
