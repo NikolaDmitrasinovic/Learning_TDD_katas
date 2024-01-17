@@ -17,18 +17,20 @@
             bridge.IsleTo.Should().Be(isle2);
         }
 
-        [Fact]
-        public static void Initialize_DecideBridgeOrientation()
+        [Theory]
+        [InlineData(1, 1, 1, 3, BridgeOrientation.Horizontal)]
+        [InlineData(3, 1, 5, 1, BridgeOrientation.Vertical)]
+        public static void Initialize_DecideBridgeOrientation(int isle1X, int isle1Y, int isle2X, int isle2Y, BridgeOrientation orientation)
         {
             // Arrange
-            var isle1 = new HashiIsle(1, 1, 1);
-            var isle2 = new HashiIsle(2, 1, 1);
+            var isle1 = new HashiIsle(1, isle1X, isle1Y);
+            var isle2 = new HashiIsle(2, isle2X, isle2Y);
 
             // Act
             var bridge = new HashiBridge(isle1, isle2);
 
             // Assert
-            bridge.Orientation.Should().Be(BridgeOrientation.Horizontal);
+            bridge.Orientation.Should().Be(orientation);
         }
 
         [Fact]
