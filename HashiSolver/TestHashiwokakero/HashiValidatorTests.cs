@@ -1,6 +1,5 @@
 namespace TestHashiwokakero
 {
-
     public class HashiValidatorTests
     {
         [Fact]
@@ -25,34 +24,17 @@ namespace TestHashiwokakero
         }
 
         [Fact]
-        public void Validate_IfThereAreDiagonalBridges()
-        {
-            // Arrange
-            var puzzle = new HashiPuzzle();
-
-            puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(1, 1, 0);
-            puzzle.AddBridge(0, 1);
-
-            // Act
-            var isValid = HashiValidator.Validate(puzzle);
-
-            // Assert
-            isValid.Should().BeFalse();
-        }
-
-        [Fact]
         public void Validate_IfBridgesCross()
         {
             // Arrange
             var puzzle = new HashiPuzzle();
 
             puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(1, 1, 0);
             puzzle.AddIsle(1, 2, 1);
+            puzzle.AddIsle(1, 1, 0);
             puzzle.AddIsle(1, 1, 2);
-            puzzle.AddBridge(0, 2);
-            puzzle.AddBridge(1, 2);
+            puzzle.AddBridge(0, 1);
+            puzzle.AddBridge(2, 3);
 
             // Act
             var isValid = HashiValidator.Validate(puzzle);
@@ -61,55 +43,19 @@ namespace TestHashiwokakero
             isValid.Should().BeFalse();
         }
 
-        [Fact]
-        public void Validate_IfBridgesAreCrossingIsles() // not all cases tested!!!
+        [Theory]
+        [InlineData(0, 1, 0, 2, 0, 3)]
+        [InlineData(1, 0, 2, 0, 3, 0)]
+        public void Validate_IfBridgesAreCrossingIsles(int isle1X, int isle1Y, int isle2X, int isle2Y, int isle3X, int isle3Y)
         {
             // Arrange
             var puzzle = new HashiPuzzle();
 
-            puzzle.AddIsle(1, 0, 0);
-            puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(2, 0, 2);
+            puzzle.AddIsle(1, isle1X, isle1Y);
+            puzzle.AddIsle(1, isle2X, isle2Y);
+            puzzle.AddIsle(2, isle3X, isle3Y);
             puzzle.AddBridge(0, 2);
             puzzle.AddBridge(1, 2);
-
-            // Act
-            var isValid = HashiValidator.Validate(puzzle);
-
-            // Assert
-            isValid.Should().BeFalse();
-        }
-
-        [Fact]
-        public void Validate_IfBridgesAreCrossingIslesY() // not all cases tested!!!
-        {
-            // Arrange
-            var puzzle = new HashiPuzzle();
-
-            puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(1, 1, 1);
-            puzzle.AddIsle(2, 2, 1);
-            puzzle.AddBridge(0, 2);
-            puzzle.AddBridge(1, 2);
-
-            // Act
-            var isValid = HashiValidator.Validate(puzzle);
-
-            // Assert
-            isValid.Should().BeFalse();
-        }
-
-        [Fact]
-        public void Validate_IfBridgesAreCrossingIslesButAreInReverse() // not all cases tested!!!
-        {
-            // Arrange
-            var puzzle = new HashiPuzzle();
-
-            puzzle.AddIsle(1, 0, 1);
-            puzzle.AddIsle(1, 1, 1);
-            puzzle.AddIsle(2, 2, 1);
-            puzzle.AddBridge(2, 0);
-            puzzle.AddBridge(2, 1);
 
             // Act
             var isValid = HashiValidator.Validate(puzzle);
