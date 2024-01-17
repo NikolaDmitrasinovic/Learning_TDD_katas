@@ -3,7 +3,7 @@
     public class HashiBridgeTests
     {
         [Fact]
-        public static void Should_InitializeBridgeCorrectly()
+        public static void Initialize_CreateBridgeCorrectly()
         {
             // Arrange
             var isle1 = new HashiIsle(1, 1, 1);
@@ -18,7 +18,7 @@
         }
 
         [Fact]
-        public static void Initialize_ShouldDecideBridgeOrientation()
+        public static void Initialize_DecideBridgeOrientation()
         {
             // Arrange
             var isle1 = new HashiIsle(1, 1, 1);
