@@ -30,5 +30,19 @@
             // Assert
             bridge.Orientation.Should().Be(BridgeOrientation.Horizontal);
         }
+
+        [Fact]
+        public static void Initialize_ReturnsExceptionForDiagonalBridge()
+        {
+            // Arrange
+            var isle1 = new HashiIsle(1, 2, 2);
+            var isle2 = new HashiIsle(1, 1, 1);
+
+            // Act
+            var bridge = () => new HashiBridge(isle1, isle2);
+
+            // Assert
+            bridge.Should().Throw<InvalidOperationException>().WithMessage("Only orthagonal bridges allowed.");
+        }
     }
 }
