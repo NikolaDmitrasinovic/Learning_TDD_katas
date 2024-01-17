@@ -8,6 +8,9 @@
 
         public HashiBridge(HashiIsle isle1, HashiIsle isle2)
         {
+            if (isle1.Equals(isle2))
+                throw new InvalidOperationException("Bridges can only connect distinct islands");
+
             if (IsHorizontal(isle1, isle2))
             {
                 Orientation = BridgeOrientation.Horizontal;
