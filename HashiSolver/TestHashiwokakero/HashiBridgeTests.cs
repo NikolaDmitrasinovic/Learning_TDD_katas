@@ -46,5 +46,18 @@
             // Assert
             bridge.Should().Throw<InvalidOperationException>().WithMessage("Only orthagonal bridges allowed.");
         }
+
+        [Fact]
+        public static void Initialize_ReturnsExceptionForBridgeingIsleToItslef()
+        {
+            // Arrange
+            var isle = new HashiIsle(1, 2, 2);
+
+            // Act
+            var bridge = () => new HashiBridge(isle, isle);
+
+            // Assert
+            bridge.Should().Throw<InvalidOperationException>().WithMessage("Bridges can only connect distinct islands");
+        }
     }
 }
