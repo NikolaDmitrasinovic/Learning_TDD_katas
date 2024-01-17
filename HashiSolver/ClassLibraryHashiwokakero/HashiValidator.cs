@@ -1,5 +1,4 @@
-﻿
-namespace ClassLibraryHashiwokakero
+﻿namespace ClassLibraryHashiwokakero
 {
     public class HashiValidator
     {
@@ -62,22 +61,29 @@ namespace ClassLibraryHashiwokakero
             return false;
         }
 
-        // TODO refactor 
         private static bool HasBridgesCrossingIsles(HashiPuzzle puzzle)
         {
             foreach (var bridge in puzzle.Bridges)
             {
-                foreach (var isle in puzzle.Isles)
-                {
-                    if (isle.Y == bridge.IsleTo.Y && isle.X > bridge.IsleFrom.X && isle.X < bridge.IsleTo.X)
-                        return true;
-
-                    if (isle.X == bridge.IsleFrom.X && isle.Y > bridge.IsleFrom.Y && isle.Y < bridge.IsleTo.Y)
-                        return true;
-                }
+                if (IsIsleUnderBridge(bridge, puzzle.Isles))
+                    return true;
             }
 
             return false;
-        }        
+        }
+
+        private static bool IsIsleUnderBridge(HashiBridge bridge, List<HashiIsle> isles)
+        {
+            List<HashiIsle> horizontal = isles.Where(isle => isle.Y == bridge.IsleTo.Y).ToList();
+            List<HashiIsle> vertical = isles.Where(isle => isle.X == bridge.IsleTo.X).ToList();
+
+            return horizontal.Any(isle => IsInBetween(bridge.IsleFrom.X, isle.X, bridge.IsleTo.X)) 
+                || vertical.Any(isle => IsInBetween(bridge.IsleFrom.Y, isle.Y, bridge.IsleTo.Y));
+        }
+
+        private static bool IsInBetween(int bridgeFrom, int isle, int bridgeTo)
+        {
+            return isle > bridgeFrom && isle < bridgeTo;
+        }
     }
 }
