@@ -36,6 +36,15 @@
         {
             return isle1.X == isle2.X;
         }
+
+        public override bool Equals(object? obj)
+        {
+            HashiBridge otherBridge = obj as HashiBridge ?? throw new NullReferenceException();
+            if(IsleFrom.Equals(otherBridge.IsleFrom) && IsleTo.Equals(otherBridge.IsleTo))
+                return true;
+
+            return false;
+        }
     }
 
     public enum BridgeOrientation
