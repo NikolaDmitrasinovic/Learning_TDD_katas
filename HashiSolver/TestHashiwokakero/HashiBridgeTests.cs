@@ -59,5 +59,20 @@
             // Assert
             bridge.Should().Throw<InvalidOperationException>().WithMessage("Bridges can only connect distinct islands");
         }
+
+        [Fact]
+        public static void Equals_ReturnsTrue_IfBridgesConnectSameIsles()
+        {
+            // Arrange
+            var isle1 = new HashiIsle(1, 2, 2);
+            var isle2 = new HashiIsle(1, 2, 1);
+
+            // Act
+            var bridge1 = new HashiBridge(isle1, isle2);
+            var bridge2 = new HashiBridge(isle1, isle2);
+
+            // Assert
+            bridge1.Equals(bridge2).Should().BeTrue();
+        }
     }
 }
