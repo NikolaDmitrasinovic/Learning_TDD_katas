@@ -6,80 +6,12 @@
         {
             if (!HasNeededAmountOfBrigdes(puzzle))
                 return false;
-            else if (HasDiagonalBridges(puzzle))
-                return false;
             else if (HasBridgesCross(puzzle))
                 return false;
             else if (HasBridgesCrossingIsles(puzzle))
                 return false;
 
             return true;
-        }
-
-        private static bool HasBridgesCrossingIsles(HashiPuzzle puzzle)
-        {
-            foreach (var bridge in puzzle.Bridges)
-            {
-                foreach (var isle in puzzle.Isles)
-                {
-                    if (isle.X > bridge.Isle1.X && isle.X < bridge.Isle2.X)
-                        return true;
-
-                    if (isle.Y > bridge.Isle1.Y && isle.Y < bridge.Isle2.Y)
-                        return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static bool HasBridgesCross(HashiPuzzle puzzle)
-        {
-            foreach (var bridge1 in puzzle.Bridges)
-            {
-                foreach (var bridge2 in puzzle.Bridges)
-                {
-                    if (!bridge1.Equals(bridge2))
-                        continue;
-
-                    if (AreCrossing(bridge1, bridge2))
-                        return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static bool HasDiagonalBridges(HashiPuzzle puzzle)
-        {
-            foreach (var bridge in puzzle.Bridges)
-            {
-                if (bridge.Isle1.X != bridge.Isle2.X && bridge.Isle1.Y != bridge.Isle2.Y)
-                    return true;
-            }
-
-            return false;
-        }
-
-        private static bool AreCrossing(HashiBridge bridge1, HashiBridge bridge2)
-        {
-            if (bridge1.Isle1.X == bridge1.Isle2.X && bridge2.Isle1.Y == bridge2.Isle2.Y)
-            {
-                if (bridge1.Isle1.Y < bridge2.Isle1.Y && bridge1.Isle2.Y > bridge2.Isle1.Y)
-                {
-                    return true;
-                }
-            }
-
-            if (bridge1.Isle1.Y == bridge1.Isle2.Y && bridge2.Isle1.X == bridge2.Isle2.X)
-            {
-                if (bridge1.Isle1.X < bridge2.Isle1.X && bridge1.Isle2.X > bridge2.Isle1.X)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         private static bool HasNeededAmountOfBrigdes(HashiPuzzle puzzle)
@@ -90,5 +22,48 @@
 
             return true;
         }
+
+        private static bool HasBridgesCross(HashiPuzzle puzzle)
+        {
+            List<HashiBridge> horizontalBridges = puzzle.Bridges.Where(b => b.Orientation == BridgeOrientation.Horizontal).ToList();
+            List<HashiBridge> verticalBridges = puzzle.Bridges.Where(b => b.Orientation == BridgeOrientation.Vertical).ToList();
+
+            foreach (var bridgeH in horizontalBridges)
+            {
+                foreach (var bridgeV in verticalBridges)
+                {
+                    if (AreCrossing(bridgeH, bridgeV))
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool AreCrossing(HashiBridge bridgeH, HashiBridge bridgeV)
+        {
+            if (bridgeH.IsleFrom.X < bridgeV.IsleTo.X && bridgeH.IsleTo.X > bridgeV.IsleTo.X)
+                return true;
+
+            return false;
+        }
+
+        // TODO refactor 
+        private static bool HasBridgesCrossingIsles(HashiPuzzle puzzle)
+        {
+            foreach (var bridge in puzzle.Bridges)
+            {
+                foreach (var isle in puzzle.Isles)
+                {
+                    if (isle.Y == bridge.IsleTo.Y && isle.X > bridge.IsleFrom.X && isle.X < bridge.IsleTo.X)
+                        return true;
+
+                    if (isle.X == bridge.IsleFrom.X && isle.Y > bridge.IsleFrom.Y && isle.Y < bridge.IsleTo.Y)
+                        return true;
+                }
+            }
+
+            return false;
+        }        
     }
 }
