@@ -68,9 +68,9 @@ namespace TestTicTacToe
             // Arrange
             var game = new int[3, 3]
             {
-                { 2, 0, 1},
+                { 2, 0,      1 },
                 { 0, victor, 0 },
-                { 1, 0, 2 }
+                { 1, 0,      2 }
             };
 
             // Act
