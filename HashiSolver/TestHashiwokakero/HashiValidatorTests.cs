@@ -23,13 +23,15 @@ namespace TestHashiwokakero
             isValid.Should().BeTrue();
         }
 
-        [Fact]
-        public void Validate_IfBridgesCross()
+        [Theory]
+        [InlineData(0, false)]
+        [InlineData(5, true)]
+        public void Validate_IfBridgesCross(int isle1X, bool result)
         {
             // Arrange
             var puzzle = new HashiPuzzle();
 
-            puzzle.AddIsle(1, 0, 1);
+            puzzle.AddIsle(1, isle1X, 1);
             puzzle.AddIsle(1, 2, 1);
             puzzle.AddIsle(1, 1, 0);
             puzzle.AddIsle(1, 1, 2);
@@ -40,7 +42,7 @@ namespace TestHashiwokakero
             var isValid = HashiValidator.Validate(puzzle);
 
             // Assert
-            isValid.Should().BeFalse();
+            isValid.Should().Be(result);
         }
 
         [Theory]
