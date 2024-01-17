@@ -65,5 +65,24 @@ namespace TestHashiwokakero
             // Assert
             isValid.Should().BeFalse();
         }
+
+        [Fact]
+        public void Validate_AtMostTwoBridgesConnectAPairOfIslands()
+        {
+            // Arrange
+            var puzzle = new HashiPuzzle();
+
+            puzzle.AddIsle(3, 0, 0);
+            puzzle.AddIsle(3, 0, 1);
+            puzzle.AddBridge(0, 1);
+            puzzle.AddBridge(0, 1);
+            puzzle.AddBridge(0, 1);
+
+            // Act
+            var isValid = HashiValidator.Validate(puzzle);
+
+            // Assert
+            isValid.Should().BeFalse();
+        }
     }
 }
