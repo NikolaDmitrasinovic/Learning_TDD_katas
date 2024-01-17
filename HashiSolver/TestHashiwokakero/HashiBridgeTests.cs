@@ -18,8 +18,8 @@
         }
 
         [Theory]
-        [InlineData(1, 1, 1, 3, BridgeOrientation.Horizontal)]
-        [InlineData(3, 1, 5, 1, BridgeOrientation.Vertical)]
+        [InlineData(1, 1, 1, 3, BridgeOrientation.Vertical)]
+        [InlineData(3, 1, 5, 1, BridgeOrientation.Horizontal)]
         public static void Initialize_DecideBridgeOrientation(int isle1X, int isle1Y, int isle2X, int isle2Y, BridgeOrientation orientation)
         {
             // Arrange
