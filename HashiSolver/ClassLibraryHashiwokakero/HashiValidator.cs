@@ -1,4 +1,5 @@
-﻿namespace ClassLibraryHashiwokakero
+﻿
+namespace ClassLibraryHashiwokakero
 {
     public class HashiValidator
     {
@@ -10,8 +11,21 @@
                 return false;
             else if (HasBridgesCrossingIsles(puzzle))
                 return false;
+            else if (HasMoreThanTwoBrigesBetweenIsles(puzzle))
+                return false;
 
             return true;
+        }
+
+        private static bool HasMoreThanTwoBrigesBetweenIsles(HashiPuzzle puzzle)
+        {
+            foreach (var bridge in puzzle.Bridges)
+            {
+                if (puzzle.Bridges.Count(b => b.Equals(bridge)) > 2)
+                    return true;
+            }
+
+            return false;
         }
 
         private static bool HasNeededAmountOfBrigdes(HashiPuzzle puzzle)
