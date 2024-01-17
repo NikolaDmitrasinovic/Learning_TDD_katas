@@ -52,6 +52,7 @@ Write a program that evaluates a provided solution for the game Hashi. The progr
 * Every island has the needed amount of bridges.
 * Every bridge is connected to two islands.
 * No bridge is crossing with another one.
+* At most two bridges connect a pair of islands.
 
 A description of the game and the rules can be found on [Wikipedia](https://en.wikipedia.org/wiki/Hashiwokakero).
 
