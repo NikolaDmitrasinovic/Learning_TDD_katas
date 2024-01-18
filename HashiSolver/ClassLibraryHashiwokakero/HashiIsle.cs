@@ -1,4 +1,6 @@
-﻿namespace ClassLibraryHashiwokakero
+﻿using System.Collections.Generic;
+
+namespace ClassLibraryHashiwokakero
 {
     public class HashiIsle(int value, int x, int y)
     {
@@ -10,7 +12,7 @@
         public HashiBridge Connect(HashiIsle isle)
         {
             ConnectedIsles.Add(isle);
-            return new HashiBridge(this, isle);
+            return new HashiBridge.HashiBridgeBuilder().Isle1(this).Isle2(isle).Build();
         }
     }
 }

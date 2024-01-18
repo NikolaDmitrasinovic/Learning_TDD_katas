@@ -1,4 +1,6 @@
-﻿namespace ClassLibraryHashiwokakero
+﻿using System.Collections.Generic;
+
+namespace ClassLibraryHashiwokakero
 {
     public class HashiPuzzle
     {
@@ -7,7 +9,7 @@
 
         public void AddBridge(int v1, int v2)
         {
-            Bridges.Add(new HashiBridge(Isles[v1], Isles[v2]));
+            Bridges.Add(new HashiBridge.HashiBridgeBuilder().Isle1(Isles[v1]).Isle2(Isles[v2]).Build());
             Isles[v1].Connect(Isles[v2]);
             Isles[v2].Connect(Isles[v1]);
         }

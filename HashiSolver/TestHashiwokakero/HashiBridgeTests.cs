@@ -1,4 +1,6 @@
-﻿namespace TestHashiwokakero
+﻿using System.Collections.Generic;
+
+namespace TestHashiwokakero
 {
     public class HashiBridgeTests
     {
@@ -10,7 +12,7 @@
             var isle2 = new HashiIsle(2, 1, 2);
 
             // Act
-            var bridge = new HashiBridge(isle1, isle2);
+            var bridge = new HashiBridge.HashiBridgeBuilder().Isle1(isle1).Isle2(isle2).Build();
 
             // Assert
             bridge.IsleFrom.Should().Be(isle1);
@@ -27,7 +29,7 @@
             var isle2 = new HashiIsle(2, isle2X, isle2Y);
 
             // Act
-            var bridge = new HashiBridge(isle1, isle2);
+            var bridge = new HashiBridge.HashiBridgeBuilder().Isle1(isle1).Isle2(isle2).Build();
 
             // Assert
             bridge.Orientation.Should().Be(orientation);
@@ -41,10 +43,10 @@
             var isle2 = new HashiIsle(1, 1, 1);
 
             // Act
-            var bridge = () => new HashiBridge(isle1, isle2);
+            var bridge = () => new HashiBridge.HashiBridgeBuilder().Isle1(isle1).Isle2(isle2).Build();
 
             // Assert
-            bridge.Should().Throw<InvalidOperationException>().WithMessage("Only orthagonal bridges allowed.");
+            bridge.Should().Throw<InvalidOperationException>().WithMessage("Only orthagonal bridges allowed");
         }
 
         [Fact]
@@ -54,10 +56,10 @@
             var isle = new HashiIsle(1, 2, 2);
 
             // Act
-            var bridge = () => new HashiBridge(isle, isle);
+            var bridge = () => new HashiBridge.HashiBridgeBuilder().Isle1(isle).Isle2(isle).Build();
 
             // Assert
-            bridge.Should().Throw<InvalidOperationException>().WithMessage("Bridges can only connect distinct islands");
+            bridge.Should().Throw<InvalidOperationException>().WithMessage("Invalid bridge configuration");
         }
 
         [Fact]
@@ -68,8 +70,8 @@
             var isle2 = new HashiIsle(1, 2, 1);
 
             // Act
-            var bridge1 = new HashiBridge(isle1, isle2);
-            var bridge2 = new HashiBridge(isle1, isle2);
+            var bridge1 = new HashiBridge.HashiBridgeBuilder().Isle1(isle1).Isle2(isle2).Build();
+            var bridge2 = new HashiBridge.HashiBridgeBuilder().Isle1(isle1).Isle2(isle2).Build();
 
             // Assert
             bridge1.Equals(bridge2).Should().BeTrue();
